@@ -1,63 +1,49 @@
 # Radix Sort
 
-**Unit:** Unit 2: Sorting & Searching Algorithms (CO2)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab02-Sorting-Searching/Program07-RadixSort/radix_sort.py`  
+**Shared implementation:** [sorting_algorithms.py](../sorting_algorithms.py)
 
-## 1. Problem statement
-Implement Radix Sort and document the input constraints of the chosen variant.
+## Problem statement
+Implement Radix Sort as required by Unit 2 and demonstrate it with sample data.
 
-## 2. Approach
-_To be completed after selecting and implementing the approach._
+## Approach
+The reusable implementation is in `sorting_algorithms.py`. The program in this folder imports and demonstrates the corresponding function. Sorting functions return a new list and do not mutate the source list.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## Algorithm
+Use stable least-significant-digit decimal passes. Sort negative magnitudes separately and reverse their order.
 
-## 4. Pseudocode
+## Pseudocode
 ```text
-START
-  // Add language-independent pseudocode.
-END
+RADIX SORT(A)
+  create a working copy of A
+  perform the steps described above
+  return the sorted working copy
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
+## Dry run
+[170, 45, 75, -90] → digit passes → [-90, 45, 75, 170].
 
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
+## Complexity analysis
+| Case | Time complexity |
+|---|---|
+| Best | O(d(n+10)) |
+| Average | O(d(n+10)) |
+| Worst | O(d(n+10)) |
 
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
+Auxiliary space: **O(n+10) auxiliary**. The returned list is a separate copy and occupies O(n) memory.
 
-## 7. Sample input/output
+## Sample input/output
 ```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
+Input: [34, -2, 7, 7, 19, 0, 12]
+Output: [-2, 0, 7, 7, 12, 19, 34]
 ```
 
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
+## Real-life application
+Stable LSD sort for integers; d is number of decimal digits and base is 10.
 
-## 9. Real-life application
-_To be documented._
+## Learning outcomes
+Complete after executing the program and reflecting on the result.
 
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## Tests and screenshots
+See [test_unit2.py](../../../tests/test_unit2.py). Capture a real terminal screenshot after running this program.

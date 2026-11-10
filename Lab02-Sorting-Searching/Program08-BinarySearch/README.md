@@ -1,63 +1,44 @@
 # Binary Search
 
-**Unit:** Unit 2: Sorting & Searching Algorithms (CO2)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab02-Sorting-Searching/Program08-BinarySearch/binary_search.py`
 
-## 1. Problem statement
-Implement Binary Search on sorted data, including absent-key handling.
+## Problem statement
+Search for a key in an ascending sorted sequence using Binary Search.
 
-## 2. Approach
-_To be completed after selecting and implementing the approach._
+## Approach
+Maintain a half-open search interval [low, high). Compare the middle key with the target and shrink the interval. When duplicates exist, continue toward the left boundary to return the first matching index.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
-
-## 4. Pseudocode
+## Algorithm and pseudocode
 ```text
-START
-  // Add language-independent pseudocode.
-END
+BINARY_SEARCH(A, target)
+  low = 0; high = length(A)
+  while low < high
+    mid = floor((low + high) / 2)
+    if A[mid] < target: low = mid + 1
+    else: high = mid
+  if low < length(A) and A[low] == target: return low
+  return -1
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
+## Dry run
+For [2, 4, 7, 7, 9] and target 7, the lower-bound search terminates at index 2, the first occurrence.
 
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
+## Complexity
+Best O(1), average O(log n), worst O(log n); auxiliary space O(1). The input must already be sorted by the same key.
 
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
+## Sample input/output
 ```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
+Sorted input: [2, 4, 7, 7, 9, 13, 18]
+First index of 7: 2
+Absent target 10: -1
 ```
 
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
+## Real-life application
+Lookup in sorted dictionaries, catalogues, and index files.
 
-## 9. Real-life application
-_To be documented._
+## Learning outcomes
+Complete after executing and reflecting on the program.
 
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## Tests and screenshots
+See [test_unit2.py](../../../tests/test_unit2.py). Capture an actual terminal screenshot after the run.

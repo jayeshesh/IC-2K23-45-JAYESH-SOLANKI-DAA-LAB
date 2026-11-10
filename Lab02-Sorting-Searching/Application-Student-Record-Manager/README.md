@@ -1,63 +1,41 @@
 # Student Record Manager
 
-**Unit:** Unit 2: Sorting & Searching Algorithms (CO2)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Run:** `python Lab02-Sorting-Searching/Application-Student-Record-Manager/student_record_manager.py`
 
-## 1. Problem statement
-Sort and search student records by roll number, name, and marks using different algorithms; provide a comparative performance report.
+## Problem statement
+Sort and search student records by roll number, name, and marks using Unit 2 algorithms.
 
-## 2. Approach
-_To be completed after selecting and implementing the approach._
+## Approach
+A Student record stores roll number, name, and marks. Sorting supports all seven algorithms. Radix Sort requires integer keys, so it is supported for whole-number marks only; names and alphanumeric roll numbers use comparison sorts. Searching supports linear scan or binary search after sorting. Both strategies return all matching records, including duplicates.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
-
-## 4. Pseudocode
+## Algorithm and pseudocode
 ```text
-START
-  // Add language-independent pseudocode.
-END
+SORT(records, field, algorithm)
+  choose field key
+  if Radix: require whole-number marks and sort integer marks
+  otherwise: run selected sort with the field key
+  return sorted records
+
+SEARCH(records, field, value, method)
+  if linear: scan and collect matches
+  otherwise: merge-sort by field, binary-search first match,
+             collect adjacent records with equal keys
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
+## Dry run
+Marks [78, 91, 91] sorted with Radix Sort remain [78, 91, 91]. Searching for 91 returns both matching records.
 
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
+## Complexity
+For n records, sorting time depends on the selected algorithm (see algorithm READMEs). Linear search is O(1) best and O(n) average/worst. Binary search including pre-sorting is O(n log n) overall; the search phase alone is O(log n).
 
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
+## Sample I/O
+The demonstration data contains duplicate names and marks. Try Radix Sort for marks and Merge Sort for names. Record actual output from execution.
 
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
+## Real-life application
+Student information systems, examination offices, and academic result portals.
 
-Sample output:
-_To be added after testing._
-```
+## Learning outcomes
+Complete after testing the application.
 
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## Tests and screenshots
+Tests cover field sorting, Radix on whole-number marks, duplicate matches, missing values, and invalid input. Capture genuine terminal screenshots.
