@@ -1,63 +1,27 @@
-# Static Queue
+# Static Queue (Array-Based)
 
-**Unit:** Unit 5: Queues (CO1)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab05-Queues/Program01-Static-Queue/static_queue.py`
 
 ## 1. Problem statement
-Implement a static queue.
+Implement a fixed-capacity static queue backed by a pre-allocated array supporting FIFO `enqueue`, `dequeue`, and `peek` with explicit overflow/underflow handling.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+A fixed-capacity array holds items. `_front` and `_rear` indices track boundaries. `enqueue` increments `_rear` in $O(1)$; `dequeue` increments `_front` in $O(1)$.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Operation | Best | Average | Worst | Auxiliary Space |
+|---|---:|---:|---:|---:|
+| Enqueue | O(1) | O(1) | O(1) | O(1) |
+| Dequeue | O(1) | O(1) | O(1) | O(1) |
+| Peek | O(1) | O(1) | O(1) | O(1) |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+Static Queue: [1, 2, 3]
+Dequeued: 1
+Front: 2
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+Fixed hardware buffering in embedded communication peripherals (UART, SPI buffers).

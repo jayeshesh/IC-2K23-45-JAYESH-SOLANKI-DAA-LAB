@@ -1,63 +1,27 @@
-# Circular Queue
+# Circular Queue (Ring Buffer)
 
-**Unit:** Unit 5: Queues (CO1)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab05-Queues/Program03-Circular-Queue/circular_queue.py`
 
 ## 1. Problem statement
-Implement a circular queue.
+Implement a fixed-capacity circular queue (ring buffer) where `front` and `rear` pointers advance using modular arithmetic (`(index + 1) % capacity`), eliminating the linear queue false-overflow problem.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+An array of size $N$ stores elements. When elements are dequeued from the front, subsequent enqueues wrap around to index 0 modulo $N$, allowing 100% capacity reuse.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Operation | Best | Average | Worst | Auxiliary Space |
+|---|---:|---:|---:|---:|
+| Enqueue | O(1) | O(1) | O(1) | O(1) |
+| Dequeue | O(1) | O(1) | O(1) | O(1) |
+| Peek | O(1) | O(1) | O(1) | O(1) |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+Initial CQ: ['A', 'B', 'C']
+Dequeued: A
+After wrapping enqueue D: ['B', 'C', 'D']
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+Circular audio/video streaming buffers, keyboard input interrupt buffers, and network packet circular queues.

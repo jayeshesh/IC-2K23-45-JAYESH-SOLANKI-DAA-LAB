@@ -1,63 +1,28 @@
-# Deque
+# Double-Ended Queue (Deque)
 
-**Unit:** Unit 5: Queues (CO1)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab05-Queues/Program04-Deque/deque.py`
 
 ## 1. Problem statement
-Implement a double-ended queue with insertion/deletion at both ends.
+Implement a dynamic Double-Ended Queue (Deque) supporting $O(1)$ operations at both ends: `append_front`, `append_rear`, `pop_front`, `pop_rear`, `peek_front`, and `peek_rear`.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+A doubly linked list node structure (`DequeNode`) with bidirectional references maintains both `head` and `tail` sentinels, enabling constant-time insertion and deletion from either end.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Operation | Best | Average | Worst | Auxiliary Space |
+|---|---:|---:|---:|---:|
+| Append Front / Rear | O(1) | O(1) | O(1) | O(1) |
+| Pop Front / Rear | O(1) | O(1) | O(1) | O(1) |
+| Peek Front / Rear | O(1) | O(1) | O(1) | O(1) |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+Deque elements: [5, 10, 20]
+Pop front: 5
+Pop rear: 20
+Remaining: [10]
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+Sliding-window maximum algorithms, palindrome verification, work-stealing scheduling algorithms in multi-threaded runtimes.

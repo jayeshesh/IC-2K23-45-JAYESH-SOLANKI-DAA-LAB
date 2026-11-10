@@ -1,63 +1,28 @@
 # Customer Service Queue Simulation
 
-**Unit:** Unit 5: Queues (CO1)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab05-Queues/Application-Customer-Service-Queue/customer_service_queue.py`
 
 ## 1. Problem statement
-Simulate a customer service queue and explain the queue policy.
+Simulate a real-time bank counter or customer service helpdesk queue where incoming customers are queued FIFO and served sequentially, tracking total estimated waiting times.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+A FIFO customer queue processes arriving requests. Each customer carries an estimated service duration. Wait times and service dispatching are managed in $O(1)$ operations.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Operation | Time | Auxiliary Space |
+|---|---:|---:|
+| Enqueue Customer | O(1) | O(1) |
+| Serve Customer | O(1) | O(1) |
+| Total Wait Time | O(n) | O(1) |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+Waiting Customers: 3
+Total Wait Time: 15 minutes
+Served: Customer #101 (Alice)
+Remaining Wait Time: 10 minutes
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+Hospital triage ticketing systems, bank teller lines, airline boarding queues, and call center IVR routing.

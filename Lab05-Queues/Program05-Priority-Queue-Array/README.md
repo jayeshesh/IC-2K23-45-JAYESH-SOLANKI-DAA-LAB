@@ -1,63 +1,27 @@
-# Array-Based Priority Queue
+# Priority Queue (Array-Based)
 
-**Unit:** Unit 5: Queues (CO1)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab05-Queues/Program05-Priority-Queue-Array/priority_queue_array.py`
 
 ## 1. Problem statement
-Implement a priority queue using an array.
+Implement an array-backed Priority Queue prioritizing elements by numeric priority score, analyzing the trade-offs of $O(1)$ unsorted insertion vs $O(n)$ search and extraction.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+Tuples of `(priority, value)` are appended to an array in constant $O(1)$ time. `extract_min` scans linearly through the array in $O(n)$ time to locate and remove the minimal element.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Operation | Time Complexity | Auxiliary Space |
+|---|---:|---:|
+| Insert | O(1) | O(1) |
+| Extract-Min | O(n) | O(1) |
+| Peek-Min | O(n) | O(1) |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+Peek min: Emergency Task
+Extract min: Emergency Task
+Extract next min: Medium Task
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+Low-throughput event queues with frequent fast insertions and rare batch extractions.
