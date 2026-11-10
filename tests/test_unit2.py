@@ -15,7 +15,7 @@ from search_engine_simulator import ChainingHashTable, DictionarySearchEngine, L
 
 
 class TestSortingAlgorithms(unittest.TestCase):
-    def test_all_sorts_cover_edge_cases(self):
+    def test_all_sorts_cover_edge_cases_without_mutating_input(self):
         cases = [[], [1], [3, 1, 2], [5, -1, 0, -9, 5], [2, 2, 2], list(range(30, -1, -1))]
         for name, algorithm in SORTS.items():
             for case in cases:
