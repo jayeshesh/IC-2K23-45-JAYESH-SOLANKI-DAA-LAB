@@ -1,63 +1,27 @@
-# Directory Manager / Autocomplete Dictionary
+# Directory Manager and Autocomplete Dictionary (Trie Bonus)
 
-**Unit:** Unit 6: Trees (CO3)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab06-Trees/Application-Directory-Manager/directory_manager_trie.py`
 
 ## 1. Problem statement
-Build a directory manager or autocomplete dictionary; Trie can be a bonus.
+Implement an efficient Prefix-Tree (Trie) supporting word insertions, exact word searching, and prefix-based autocomplete queries in $O(L)$ time where $L$ is word length.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+Each character transitions along a Trie edge. Finding words with prefix $P$ traverses to the prefix terminus node and collects all descendants through Depth-First Search.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Operation | Time | Auxiliary Space |
+|---|---:|---:|
+| Insert Word | O(L) | O(L) |
+| Search Word | O(L) | O(1) |
+| Autocomplete | O(P + K) | O(K) |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+Words with prefix 'alg': ['algebra', 'algo', 'algorithm']
+Words with prefix 'app': ['app', 'apple', 'application']
+Words with prefix 'b': ['binary']
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+Search engine query autocomplete, mobile predictive keyboard dictionaries, and filesystem path auto-suggestion in bash shells.

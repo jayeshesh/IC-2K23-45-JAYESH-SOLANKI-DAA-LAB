@@ -1,63 +1,24 @@
 # Threaded Binary Tree (Optional Advanced)
 
-**Unit:** Unit 6: Trees (CO3)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab06-Trees/Program04-Threaded-Binary-Tree-Optional/threaded_binary_tree.py`
 
 ## 1. Problem statement
-Implement a threaded binary tree as the optional advanced topic.
+Implement a Single-Threaded Binary Search Tree utilizing unused null leaf pointers as "threads" targeting the in-order successor, achieving $O(n)$ in-order traversal in strict $O(1)$ auxiliary space without recursion or stacks.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+Nodes with null right children store a pointer to their in-order successor with an `is_threaded` boolean flag. Traversal follows standard left-branching until leaf, then follows threads directly.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Operation | Time | Auxiliary Space |
+|---|---:|---:|
+| Inorder Traversal | O(n) | O(1) |
+| Insertion | O(h) | O(1) |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+Threaded BST Inorder (O(1) space): [5, 10, 15, 20, 30]
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+Resource-constrained real-time microcontrollers with minimal call-stack capacity.

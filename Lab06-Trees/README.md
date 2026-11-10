@@ -1,33 +1,72 @@
-# Unit 6: Trees
+# Lab 06 – Trees
 
 **Course:** IC-307D | Data Structures and Algorithms Lab  
-**Course Outcome:** CO3
+**Unit:** Unit 6: Trees (CO3)  
+**Student:** Jayesh Solanki (Roll No: IC-2K23-45)  
+**Language:** Python 3.10+
 
-## Basic requirements
-Binary Tree traversals (recursive + iterative); BST (insert, delete, search, find min/max, validation); AVL Tree (rotations + balancing); Threaded Binary Tree (optional advanced).
+---
 
-## Application / analysis requirements
-File System Simulator (hierarchical structure using trees); Expression Tree (build from postfix and evaluate); Symbol Table for a mini-compiler using BST/AVL; Directory manager or autocomplete dictionary (Trie can be bonus).
+## 1. Unit Overview
+Unit 6 implements hierarchical non-linear tree data structures, self-balancing rotations, and practical tree applications:
+- **Program 01:** Binary Tree Traversals (Recursive + Stack Iterative Inorder, Preorder, Postorder)
+- **Program 02:** Binary Search Tree (Insert, Delete with successor replacement, Search, Min/Max, Validation)
+- **Program 03:** AVL Tree (Self-balancing with LL, RR, LR, RL single and double rotations)
+- **Program 04:** Threaded Binary Tree (Optional advanced topic with $O(1)$ space traversal)
+- **Application 01:** File System Simulator (Hierarchical tree structure with `cd`, `mkdir`, `touch`, `tree`)
+- **Application 02:** Expression Tree (Build from postfix and recursively evaluate)
+- **Application 03:** Symbol Table for a Mini-Compiler (Fast identifier resolution using BST)
+- **Application 04:** Directory Manager / Autocomplete Dictionary (Prefix Trie)
 
-## Program folders
-- [Binary Tree Traversals](./Program01-Binary-Tree-Traversals/README.md)
-- [Binary Search Tree](./Program02-Binary-Search-Tree/README.md)
-- [AVL Tree](./Program03-AVL-Tree/README.md)
-- [Threaded Binary Tree (Optional Advanced)](./Program04-Threaded-Binary-Tree-Optional/README.md)
-- [File System Simulator](./Application-File-System-Simulator/README.md)
-- [Expression Tree](./Application-Expression-Tree/README.md)
-- [Mini-Compiler Symbol Table](./Application-Symbol-Table/README.md)
-- [Directory Manager / Autocomplete Dictionary](./Application-Directory-Manager/README.md)
+---
 
-## Documentation checklist
-For every program, complete its README with the problem statement, approach, algorithm, pseudocode, dry run, best/average/worst time and space complexity, sample I/O, screenshots, real-life application, learning outcomes, error handling, and unit tests where possible.
+## 2. Directory Structure
+```text
+Lab06-Trees/
+├── Program01-Binary-Tree-Traversals/
+│   ├── binary_tree_traversals.py
+│   └── README.md
+├── Program02-Binary-Search-Tree/
+│   ├── binary_search_tree.py
+│   └── README.md
+├── Program03-AVL-Tree/
+│   ├── avl_tree.py
+│   └── README.md
+├── Program04-Threaded-Binary-Tree-Optional/
+│   ├── threaded_binary_tree.py
+│   └── README.md
+├── Application-File-System-Simulator/
+│   ├── file_system_simulator.py
+│   └── README.md
+├── Application-Expression-Tree/
+│   ├── expression_tree.py
+│   └── README.md
+├── Application-Symbol-Table/
+│   ├── symbol_table.py
+│   └── README.md
+├── Application-Directory-Manager/
+│   ├── directory_manager_trie.py
+│   └── README.md
+├── reflection.md
+└── README.md
+```
 
-## Completion status
-- [ ] Implementation completed
-- [ ] Program tested
-- [ ] Complexity verified
-- [ ] Sample I/O captured
-- [ ] Screenshots added
-- [ ] Documentation reviewed
+---
 
-See [reflection.md](./reflection.md) for the cluster reflection.
+## 3. Execution Instructions
+Run from repository root:
+```bash
+python Lab06-Trees/Program01-Binary-Tree-Traversals/binary_tree_traversals.py
+python Lab06-Trees/Program02-Binary-Search-Tree/binary_search_tree.py
+python Lab06-Trees/Program03-AVL-Tree/avl_tree.py
+python Lab06-Trees/Program04-Threaded-Binary-Tree-Optional/threaded_binary_tree.py
+python Lab06-Trees/Application-File-System-Simulator/file_system_simulator.py
+python Lab06-Trees/Application-Expression-Tree/expression_tree.py
+python Lab06-Trees/Application-Symbol-Table/symbol_table.py
+python Lab06-Trees/Application-Directory-Manager/directory_manager_trie.py
+```
+
+Run test suite:
+```bash
+python -m unittest tests/test_unit6.py
+```

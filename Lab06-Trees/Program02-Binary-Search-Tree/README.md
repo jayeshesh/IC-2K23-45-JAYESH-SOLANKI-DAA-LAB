@@ -1,63 +1,31 @@
-# Binary Search Tree
+# Binary Search Tree (BST)
 
-**Unit:** Unit 6: Trees (CO3)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab06-Trees/Program02-Binary-Search-Tree/binary_search_tree.py`
 
 ## 1. Problem statement
-Implement BST insert, delete, search, min/max, and validation.
+Implement a Binary Search Tree (BST) with operations: `insert`, `search`, `delete` (handling 0, 1, and 2 children via inorder successor), `find_min`, `find_max`, and strict BST validity validation.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+Left subtrees strictly hold keys $< \text{root.key}$; right subtrees hold keys $> \text{root.key}$. Deletion of two-child nodes replaces the key with the in-order successor (minimum element of the right subtree) and recursively deletes that successor.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Operation | Best / Balanced Average | Worst (Skewed) | Auxiliary Space |
+|---|---:|---:|---:|
+| Search | O(log n) | O(n) | O(1) iterative |
+| Insert | O(log n) | O(n) | O(h) |
+| Delete | O(log n) | O(n) | O(h) |
+| Validation | O(n) | O(n) | O(h) |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+Inorder (Sorted): [20, 30, 40, 50, 60, 70, 80]
+Search 40: True
+Search 99: False
+Min: 20 | Max: 80
+Is Valid BST? True
+After deleting 30: [20, 40, 50, 60, 70, 80]
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+Database indexing, filesystem path searches, symbol lookup tables.

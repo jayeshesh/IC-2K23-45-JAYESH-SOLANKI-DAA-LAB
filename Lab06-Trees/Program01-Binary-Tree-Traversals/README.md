@@ -1,63 +1,30 @@
-# Binary Tree Traversals
+# Binary Tree Traversals (Recursive and Iterative)
 
-**Unit:** Unit 6: Trees (CO3)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab06-Trees/Program01-Binary-Tree-Traversals/binary_tree_traversals.py`
 
 ## 1. Problem statement
-Implement recursive and iterative binary tree traversals.
+Implement both recursive and explicit stack-based iterative algorithms for standard binary tree depth-first traversals: Inorder ($L-N-R$), Preorder ($N-L-R$), and Postorder ($L-R-N$).
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+Recursive solutions rely on call stack frames. Iterative solutions replace call frames with explicit stack data structures, avoiding recursion depth limit limits on deep trees.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Traversal | Time Complexity | Auxiliary Space (Call / Explicit Stack) |
+|---|---:|---:|
+| Inorder (Rec & Iter) | O(n) | O(h) |
+| Preorder (Rec & Iter) | O(n) | O(h) |
+| Postorder (Rec & Iter) | O(n) | O(h) |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+Inorder (Rec): [4, 2, 5, 1, 3]
+Inorder (Iter): [4, 2, 5, 1, 3]
+Preorder (Rec): [1, 2, 4, 5, 3]
+Preorder (Iter): [1, 2, 4, 5, 3]
+Postorder (Rec): [4, 5, 2, 3, 1]
+Postorder (Iter): [4, 5, 2, 3, 1]
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+Abstract syntax tree (AST) code generators, hierarchical DOM tree rendering, and file hierarchy serialization.

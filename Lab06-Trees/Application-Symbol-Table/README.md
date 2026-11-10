@@ -1,63 +1,31 @@
-# Mini-Compiler Symbol Table
+# Symbol Table for a Mini-Compiler using BST
 
-**Unit:** Unit 6: Trees (CO3)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab06-Trees/Application-Symbol-Table/symbol_table.py`
 
 ## 1. Problem statement
-Implement a symbol table using a BST or AVL tree.
+Implement a Symbol Table for a compiler front-end using a Binary Search Tree (BST) to store, update, and resolve variable identifiers, data types, scope levels, and values in logarithmic time.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+Identifiers are ordered lexicographically in the BST. `lookup` and `insert` execute in $O(\log n)$ average time.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Operation | Average | Worst | Auxiliary Space |
+|---|---:|---:|---:|
+| Insert / Update | O(log n) | O(n) | O(h) |
+| Lookup | O(log n) | O(n) | O(1) |
+| Inorder Dump | O(n) | O(n) | O(n) |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+Symbol Table Lookup 'pi':
+  Name: pi, Type: float, Value: 3.14159
+
+All Symbols (Sorted by Identifier):
+  counter    | Type: int    | Scope: 0 | Value: 100
+  flag       | Type: bool   | Scope: 1 | Value: True
+  pi         | Type: float  | Scope: 0 | Value: 3.14159
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+Compiler semantic analysis passes (GCC, Clang, Rustc), linters, and IDE language servers.

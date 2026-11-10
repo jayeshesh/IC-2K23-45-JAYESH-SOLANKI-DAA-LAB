@@ -1,63 +1,27 @@
-# AVL Tree
+# AVL Tree (Self-Balancing BST)
 
-**Unit:** Unit 6: Trees (CO3)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab06-Trees/Program03-AVL-Tree/avl_tree.py`
 
 ## 1. Problem statement
-Implement AVL rotations and balancing.
+Implement an AVL Tree that maintains a strict balance factor condition ($\text{Balance} \in \{-1, 0, +1\}$) for every node, automatically executing single (LL, RR) or double (LR, RL) rotations during insertion to guarantee $O(\log n)$ height.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+After standard recursive BST insertion, the call stack updates heights and calculates $\text{balance} = \text{height(left)} - \text{height(right)}$. If $|\text{balance}| > 1$, the appropriate rotation (LL, RR, LR, RL) rebalances the subtree in $O(1)$ pointer adjustments.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Operation | Best | Average | Worst | Auxiliary Space |
+|---|---:|---:|---:|---:|
+| Search | O(log n) | O(log n) | O(log n) | O(1) |
+| Insert | O(log n) | O(log n) | O(log n) | O(log n) |
+| Rotations | O(1) | O(1) | O(1) | O(1) |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+AVL Inorder: [10, 20, 25, 30, 40, 50]
+AVL Root: 30
+AVL Root Height: 3
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+High-frequency database search trees, router IP routing lookup tables, and in-memory key-value indexes.
