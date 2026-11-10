@@ -1,18 +1,21 @@
-# Unit 2: Sorting & Searching Algorithms | Reflection
+# Unit 2: Sorting & Searching | Reflection
 
-Complete this after implementing and testing the programs in this unit.
+Complete this reflection after running all programs and the benchmark.
 
 ## What I learned
 _To be completed._
 
 ## Difficulties faced
-_Describe the challenge and how it was resolved._
+_Record challenges in partitioning, heap construction, digit passes, binary-search boundaries, and hash collision handling._
 
 ## Optimizations made
-_Explain what changed and why._
+_Explain changes actually evaluated, such as early exit, duplicate-aware Quick Sort partitioning, and load-factor-based resizing._
 
-## Testing and observations
-_Record real tests, results, and limitations._
+## Benchmark observations
+_Record actual CSV and graph observations from the machine used. Do not copy benchmark times from another computer.
+
+## Application observations
+_Reflect on student record sorting/searching and dictionary collision strategies._
 
 ## Further improvements
 _To be completed._

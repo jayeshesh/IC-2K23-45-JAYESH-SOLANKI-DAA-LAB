@@ -1,63 +1,47 @@
 # Search Engine Simulator
 
-**Unit:** Unit 2: Sorting & Searching Algorithms (CO2)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Run:** `python Lab02-Sorting-Searching/Application-Search-Engine-Simulator/search_engine_simulator.py`
 
-## 1. Problem statement
-Implement a dictionary with binary search and hashing; handle collisions using Separate Chaining and Linear Probing.
+## Problem statement
+Implement a dictionary with Binary Search and hashing. Handle hash collisions with Separate Chaining and Linear Probing.
 
-## 2. Approach
-_To be completed after selecting and implementing the approach._
+## Approach
+Keep three synchronized representations: sorted key/value pairs, a chaining hash table, and a linear-probing hash table. Keys are case-folded. Both hash tables resize above their selected load-factor thresholds. Linear Probing uses a tombstone marker so deletion does not break a later probe sequence.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
-
-## 4. Pseudocode
+## Algorithm and pseudocode
 ```text
-START
-  // Add language-independent pseudocode.
-END
+LOOKUP(word, strategy)
+  normalize word
+  if binary: binary-search sorted entries
+  if chaining: hash to bucket and scan bucket
+  if linear probing: scan from hash slot until key, empty slot, or full cycle
+  return meaning or NOT FOUND
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
+## Dry run
+At capacity 5, keys "a" and "f" have the same polynomial-hash initial bucket. Separate Chaining stores both in one bucket; Linear Probing puts the second at the next free slot.
 
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
+## Complexity
+Let n be number of terms, m table capacity, and k bucket length:
+| Operation | Binary search index | Separate Chaining | Linear Probing |
+|---|---:|---:|---:|
+| Lookup average | O(log n) | O(1) expected | O(1) expected |
+| Lookup worst | O(log n) | O(n) | O(n) |
+| Insert average | O(n) due to sorted-list reordering | O(1) expected | O(1) expected |
+| Insert worst | O(n) | O(n) | O(n) |
+| Delete average | O(n) | O(1) expected | O(1) expected |
+| Storage | O(n) | O(n+m) | O(m) |
 
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
+Expected hash lookup depends on hash distribution and controlled load factor. Resizing is O(n).
 
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
+## Sample I/O
+The default dictionary contains array, graph, queue, stack, and tree. Look up "tree" using binary, chaining, and linear-probing strategies; each should return the same meaning.
 
-Sample output:
-_To be added after testing._
-```
+## Real-life application
+Glossaries, small search indexes, symbol lookup, and autocomplete dictionaries.
 
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
+## Learning outcomes
+Complete after running and reflecting on the three lookup strategies.
 
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## Tests and screenshots
+Tests cover lookup, updates, collisions, deletion, tombstones, and resizing. Capture a genuine CLI screenshot.

@@ -1,63 +1,41 @@
 # Student Record Manager
 
-**Unit:** Unit 2: Sorting & Searching Algorithms (CO2)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Run:** `python Lab02-Sorting-Searching/Application-Student-Record-Manager/student_record_manager.py`
 
-## 1. Problem statement
-Sort and search student records by roll number, name, and marks using different algorithms; provide a comparative performance report.
+## Problem statement
+Sort and search student records by roll number, name, and marks using different Unit 2 algorithms and provide a comparative performance report.
 
-## 2. Approach
-_To be completed after selecting and implementing the approach._
+## Approach
+A Student record contains roll number, name, and marks. Sorting accepts any of the seven implemented sorting algorithms and a field-specific key. Search supports linear scan or binary search after sorting. Both strategies return all records for duplicate names or marks.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
-
-## 4. Pseudocode
+## Algorithm and pseudocode
 ```text
-START
-  // Add language-independent pseudocode.
-END
+SORT(records, field, algorithm)
+  choose key extractor for field
+  return selected algorithm(records, key)
+
+SEARCH(records, field, value, method)
+  normalize value
+  if method is linear: scan and collect every matching record
+  otherwise: merge-sort by field; binary-search first matching key;
+             collect adjacent records with equal key
+  return matches
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
+## Dry run
+Marks [78, 91, 91] sorted ascending remain [78, 91, 91]. Searching for 91 returns both records with those marks.
 
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
+## Complexity
+For n records, sorting cost depends on the selected algorithm (see algorithm READMEs). Linear search is O(1) best and O(n) average/worst. Binary search including the required pre-sort is O(n log n) overall; the binary-search phase alone is O(log n). Returned result storage is O(k) for k matches; merge-sort workspace is O(n).
 
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
+## Sample I/O
+The demonstration dataset includes duplicate names and marks. Run the CLI, select a field, and try both linear and binary search. Record the actual output used in the lab report.
 
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
+## Real-life application
+Student information systems, examination offices, and academic result portals.
 
-Sample output:
-_To be added after testing._
-```
+## Learning outcomes
+Complete after testing the app.
 
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## Tests and screenshots
+Tests cover all three sort fields, duplicate matches, missing values, and invalid records. Capture actual terminal screenshots.
