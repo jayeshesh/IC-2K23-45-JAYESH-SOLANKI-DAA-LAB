@@ -15,23 +15,23 @@ TO_TRIPLES(M)
   entries = all (row, column, value) where value is not zero
   return (row_count, column_count, entry_count) followed by entries
 ```
-Addition accumulates values by coordinate and removes entries that cancel to zero. Transpose swaps each coordinate and sorts the result. Multiplication accumulates products for matching inner indices.
+Addition accumulates values by coordinate and removes entries that cancel to zero. Transpose swaps each coordinate and sorts the result. Multiplication joins nonzero entries on their matching inner index.
 
 ## Dry run
 Input matrix: `[[0, 5], [2, 0]]`.  
 Triple form: `[(2, 2, 2), (0, 1, 5), (1, 0, 2)]`.
 
 ## Complexity
-Let r×c be the matrix size, z the number of nonzero entries, and zA/zB the nonzero counts of operands.
+Let r×c be the matrix size, z the nonzero count, and zA/zB the nonzero counts of operands.
 | Operation | Time | Auxiliary space |
 |---|---:|---:|
 | Dense → triples | O(rc) | O(z) |
 | Triples → dense | O(rc + z) | O(rc) |
 | Transpose | O(z log z) | O(z) |
 | Addition | O(zA + zB + z log z) | O(z) |
-| Multiplication (current nested sparse join) | O(zA × max row/column match work) | O(output nonzeros) |
+| Multiplication | O(zA × zB + z log z) worst case | O(output nonzeros) |
 
-The multiplication bound depends on the sparsity pattern; it is intentionally not presented as a single tight asymptotic bound for every matrix.
+The multiplication bound is a worst-case upper bound; actual work depends on which inner indices match.
 
 ## Sample I/O
 ```text

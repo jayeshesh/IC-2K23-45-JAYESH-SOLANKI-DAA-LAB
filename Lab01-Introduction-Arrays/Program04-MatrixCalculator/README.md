@@ -31,15 +31,17 @@ For r×c matrices:
 | Addition | O(rc) | O(rc) for result |
 | Multiplication (r×k by k×c) | O(rkc) | O(rc) for result |
 | Transpose | O(rc) | O(rc) for result |
-| Determinant (n×n, cofactor expansion) | O(n!) | O(n²) recursion/minor storage at a time (implementation-dependent) |
+| Determinant (n×n, cofactor expansion) | O(n!) | O(n³) worst-case temporary minor storage across recursive calls |
 
 ## Sample I/O
 ```text
-Choose 4. Determinant
-Enter matrix: [[1, 2], [3, 4]]
-Result: -2
+Number of rows: 2
+Number of columns: 2
+Enter 2 values for row 1: 1 2
+Enter 2 values for row 2: 3 4
+Determinant result:
+-2.0
 ```
-The interactive program prompts for dimensions and matrix rows; the snippet above illustrates the corresponding operation.
 
 ## Real-life application
 Small-scale scientific, graphics, and engineering calculations.

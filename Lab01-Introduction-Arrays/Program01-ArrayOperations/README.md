@@ -27,11 +27,11 @@ Input: `[10, 20, 30, 40]`, rotate right by 2.
 Shift = 2; suffix = `[30, 40]`; prefix = `[10, 20]`; result = `[30, 40, 10, 20]`.
 
 ## Complexity
-For n elements:
+For n elements (the functions make a copy for the non-search operations):
 | Operation | Best | Average | Worst | Auxiliary space |
 |---|---:|---:|---:|---:|
-| Insert at index | O(1) at end | O(n) | O(n) | O(n) due to copy |
-| Delete at index | O(1) at end | O(n) | O(n) | O(n) due to copy |
+| Insert at index | O(n) | O(n) | O(n) | O(n) |
+| Delete at index | O(n) | O(n) | O(n) | O(n) |
 | Search | O(1) | O(n) | O(n) | O(1) |
 | Rotate | O(n) | O(n) | O(n) | O(n) |
 

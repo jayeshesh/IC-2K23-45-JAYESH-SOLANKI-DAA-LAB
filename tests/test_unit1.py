@@ -1,21 +1,32 @@
-"""Unit tests for the Unit 1 array and matrix programs."""
+"""Unit tests for Unit 1 array and matrix programs.
 
+The repository folder names intentionally follow the lab guide and contain
+hyphens, so each program directory is added directly to sys.path.
+"""
+from pathlib import Path
+import sys
 import unittest
 
-from Lab01_Introduction_Arrays.Program01_ArrayOperations.array_operations import (
-    delete_at, insert_at, rotate_right, search,
-)
-from Lab01_Introduction_Arrays.Program02_2DArrayOperations.array_2d_operations import (
+ROOT = Path(__file__).resolve().parents[1]
+PROGRAM_DIRS = [
+    "Lab01-Introduction-Arrays/Program01-ArrayOperations",
+    "Lab01-Introduction-Arrays/Program02-2DArrayOperations",
+    "Lab01-Introduction-Arrays/Program03-SparseMatrix",
+    "Lab01-Introduction-Arrays/Program04-MatrixCalculator",
+]
+for relative in PROGRAM_DIRS:
+    sys.path.insert(0, str(ROOT / relative))
+
+from array_operations import delete_at, insert_at, rotate_right, search
+from array_2d_operations import (
     delete_column, delete_row, insert_column, insert_row, rotate_clockwise,
     search as search_2d,
 )
-from Lab01_Introduction_Arrays.Program03_SparseMatrix.sparse_matrix import (
+from sparse_matrix import (
     add as sparse_add, from_triples, multiply as sparse_multiply,
     to_triples, transpose as sparse_transpose,
 )
-from Lab01_Introduction_Arrays.Program04_MatrixCalculator.matrix_calculator import (
-    add, determinant, multiply, transpose,
-)
+from matrix_calculator import add, determinant, multiply, transpose
 
 
 class TestOneDimensionalArrays(unittest.TestCase):
