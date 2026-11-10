@@ -1,0 +1,34 @@
+# Compiled binaries and build output
+*.o
+*.obj
+*.exe
+*.out
+*.class
+*.dll
+*.so
+*.dylib
+/bin/
+/obj/
+/build/
+/dist/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Temporary editor files
+*~
+*.swp
+*.tmp
+
+# Keep source data, benchmark CSVs, screenshots, and reports tracked.
