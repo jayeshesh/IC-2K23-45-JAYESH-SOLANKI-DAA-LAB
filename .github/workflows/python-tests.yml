@@ -1,4 +1,4 @@
-name: Python lab tests
+name: Python lab tests and sorting benchmark
 
 on:
   push:
@@ -22,3 +22,23 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Run unit tests
         run: python -m unittest discover -s tests -v
+
+  sorting-benchmark:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Matplotlib
+        run: python -m pip install "matplotlib>=3.8"
+      - name: Run sorting benchmark
+        run: python Lab02-Sorting-Searching/Analysis-Sorting-Benchmarks/benchmark_sorting.py --sizes 100 500 1000 --repeats 3
+      - name: Upload measured results and graph
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit2-sorting-benchmark
+          path: Lab02-Sorting-Searching/Analysis-Sorting-Benchmarks/outputs/
+          retention-days: 30
