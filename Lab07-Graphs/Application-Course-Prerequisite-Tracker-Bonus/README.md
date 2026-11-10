@@ -1,63 +1,25 @@
-# Course Prerequisite Tracker
+# Course Prerequisite Tracker (Topological Sort Bonus)
 
-**Unit:** Unit 7: Graphs (CO3)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab07-Graphs/Application-Course-Prerequisite-Tracker-Bonus/course_prerequisite_tracker.py`
 
 ## 1. Problem statement
-Build a prerequisite tracker; topological sort is a bonus.
+Given an academic curriculum of courses and required prerequisites, determine a valid linear course sequence using Directed Acyclic Graph (DAG) Topological Sorting, detecting circular dependency deadlocks.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+Kahn's algorithm tracks in-degrees (number of incoming prerequisites) for each course. Courses with in-degree 0 are queued. Dequeuing a course decrements the in-degrees of its dependent courses. If the final ordered list length differs from the course count, a cycle exists.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Metric | Value |
+|---|---:|
+| Time Complexity | O(V + E) |
+| Auxiliary Space | O(V + E) |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+Valid Semester Course Sequence:
+CS101 -> CS102 -> DS201 -> ALGO301 -> AI401
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+Build dependency resolvers (Makefiles, CMake, npm package dependency graphs) and university degree audit degree planning systems.

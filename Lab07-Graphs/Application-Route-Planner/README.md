@@ -1,63 +1,27 @@
-# Route Planner / Network Connectivity Analyzer
+# Route Planner and Network Connectivity Analyzer
 
-**Unit:** Unit 7: Graphs (CO3)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab07-Graphs/Application-Route-Planner/route_planner.py`
 
 ## 1. Problem statement
-Build a route planner or network connectivity analyzer.
+Model a telecommunications routing infrastructure or computer network topology to test global reachability/connectivity and discover all simple redundant failover communication routes between endpoints.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+Connectivity is tested via BFS spanning set verification. All alternate routing options are enumerated using a backtracking Depth-First Search maintaining path history to avoid cycles.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Operation | Time | Auxiliary Space |
+|---|---:|---:|
+| Is Connected | O(V + E) | O(V) |
+| Find All Simple Routes | O(V!) worst-case complete graph | O(V) path stack |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+Is Entire Network Fully Connected? True
+Discovered 2 distinct redundant routes:
+  Server1 -> RouterA -> Database
+  Server1 -> RouterA -> RouterB -> Database
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+BGP multi-homed ISP routing failover, microservice service mesh path discovery (Istio, Envoy), power grid resilience analysis.

@@ -1,63 +1,26 @@
-# Graph Representations
+# Graph Representations (Adjacency Matrix and Adjacency List)
 
-**Unit:** Unit 7: Graphs (CO3)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab07-Graphs/Program01-Graph-Representations/graph_representations.py`
 
 ## 1. Problem statement
-Implement adjacency matrix and adjacency list representations.
+Implement and compare the two fundamental graph representations: dense Adjacency Matrix ($V \times V$) and sparse Adjacency List ($V + E$).
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+- **Adjacency Matrix:** 2D grid storing connection weights. Edge query `has_edge(u, v)` is instant $O(1)$ time, but consumes $O(V^2)$ memory.
+- **Adjacency List:** Hash map of lists storing neighbor vertices. Consumes space proportional to edges $O(V + E)$, making it optimal for sparse topologies.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity comparison
+| Representation | Storage Space | Add Edge | Check Edge (u, v) | Iterate Neighbors of u |
+|---|---:|---:|---:|---:|
+| Adjacency Matrix | O(V^2) | O(1) | O(1) | O(V) |
+| Adjacency List | O(V + E) | O(1) | O(deg(u)) | O(deg(u)) |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+Graph Matrix Neighbors of 0: [1, 2]
+Graph List Neighbors of A: ['B', 'C']
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+Dense road traffic grid modeling (matrix) vs large-scale social networks and the internet web graph (adjacency list).

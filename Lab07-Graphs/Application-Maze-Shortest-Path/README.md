@@ -1,63 +1,25 @@
-# Maze Solver / Shortest Path Navigator
+# Maze Solver and Shortest Path Navigator (Grid as Graph)
 
-**Unit:** Unit 7: Graphs (CO3)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab07-Graphs/Application-Maze-Shortest-Path/maze_solver.py`
 
 ## 1. Problem statement
-Model a grid as a graph and solve a maze or shortest-path task.
+Navigate an unweighted 2D grid maze with obstacles ($0 = \text{traversable}, 1 = \text{wall}$), computing the strictly shortest path from a start coordinate to a goal coordinate using Breadth-First Search.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+The 2D grid is modeled implicitly as an unweighted graph where adjacent open cells $(r \pm 1, c)$ and $(r, c \pm 1)$ share edges. A BFS queue explores concentric frontiers, storing parent coordinates to reconstruct the optimal shortest trajectory upon reaching the target cell.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Metric | Value |
+|---|---:|
+| Time Complexity | O(R \times C) |
+| Auxiliary Space | O(R \times C) |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+Maze Shortest Path from (0,0) to (3,3):
+[(0, 0), (0, 1), (0, 2), (1, 2), (2, 2), (2, 3), (3, 3)]
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+Autonomous mobile robot warehouse navigation (AGVs in Amazon fulfillment centers), video game AI pathfinding, and PCB wire routing.

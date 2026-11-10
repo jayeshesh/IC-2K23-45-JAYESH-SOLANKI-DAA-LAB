@@ -1,63 +1,25 @@
-# Weighted Graph and Dijkstra (Optional)
+# Weighted Graph and Dijkstra's Shortest Path Algorithm
 
-**Unit:** Unit 7: Graphs (CO3)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab07-Graphs/Program03-Weighted-Graph-Dijkstra-Optional/dijkstra.py`
 
 ## 1. Problem statement
-Implement a weighted graph and shortest path using Dijkstra (optional for strong students).
+Find the single-source shortest path in a weighted non-negative directed/undirected graph using Dijkstra's greedy algorithm with a priority queue (min-heap).
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+Maintain a table of tentative distances from the source, initializing all to $\infty$ and source to 0. A binary min-heap extracts the closest unvisited vertex $u$, relaxing all outgoing edges $(u, v)$ where $\text{dist}[u] + w < \text{dist}[v]$.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Metric | Value |
+|---|---:|
+| Time Complexity | O((V + E) \log V) |
+| Auxiliary Space | O(V) |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+Shortest path from Indore to Jabalpur: Indore -> Bhopal -> Jabalpur
+Total distance: 505.0 km
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+GPS navigation road networks (Google Maps, OSRM), internet packet IP routing protocols (OSPF, IS-IS).

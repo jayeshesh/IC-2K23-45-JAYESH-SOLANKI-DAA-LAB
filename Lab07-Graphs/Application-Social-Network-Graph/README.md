@@ -1,63 +1,26 @@
 # Social Network / Friendship Graph
 
-**Unit:** Unit 7: Graphs (CO3)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab07-Graphs/Application-Social-Network-Graph/social_network_graph.py`
 
 ## 1. Problem statement
-Find friends of friends and connected components.
+Model a social networking community as an undirected graph, implementing friend recommendations via friends-of-friends traversal (2-hop distance) and identifying isolated sub-communities through connected components analysis.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+Vertices represent users, edges represent friendships. A 2-hop neighbor expansion identifies potential connections excluding existing direct friendships and the user. BFS traversal segments the graph into disjoint connected components.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Operation | Time | Auxiliary Space |
+|---|---:|---:|
+| Friends of Friends | O(deg(u) \times \overline{deg}) | O(V) |
+| Connected Components | O(V + E) | O(V) |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+Direct friends of Jayesh: {'Aarav'}
+Friend recommendations for Jayesh: {'Rohan'}
+Social Clusters (Connected Components): [['Aarav', 'Jayesh', 'Priya', 'Rohan'], ['Kavita', 'Suresh']]
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+Facebook/LinkedIn "People You May Know" recommendation engines, fraud detection community ring identification.

@@ -1,63 +1,28 @@
-# BFS and DFS Traversals
+# BFS and DFS Traversals (Recursive and Iterative)
 
-**Unit:** Unit 7: Graphs (CO3)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab07-Graphs/Program02-BFS-DFS/bfs_dfs.py`
 
 ## 1. Problem statement
-Implement BFS and DFS recursively and iteratively.
+Implement Breadth-First Search (BFS) using a queue and Depth-First Search (DFS) using both recursion and an explicit stack across general directed/undirected graphs.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+- **BFS:** Explores level by level utilizing a FIFO queue, guaranteeing shortest path in unweighted graphs.
+- **DFS:** Follows branches as deep as possible before backtracking. Implemented recursively and iteratively via an explicit LIFO stack.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Algorithm | Time Complexity | Auxiliary Space |
+|---|---:|---:|
+| BFS | O(V + E) | O(V) |
+| DFS (Rec) | O(V + E) | O(V) call stack |
+| DFS (Iter) | O(V + E) | O(V) explicit stack |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+BFS Order:         ['A', 'B', 'C', 'D', 'E', 'F']
+DFS Recursive:     ['A', 'B', 'D', 'E', 'F', 'C']
+DFS Iterative:     ['A', 'B', 'D', 'E', 'F', 'C']
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+Web crawler URL exploration (BFS), social network distance calculation (BFS), maze path exploration and cycle detection (DFS).
