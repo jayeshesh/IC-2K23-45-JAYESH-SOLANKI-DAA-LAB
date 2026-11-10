@@ -1,4 +1,5 @@
 """Student Record Manager using the Unit 2 sorting/searching algorithms."""
+from collections import defaultdict, deque
 from dataclasses import dataclass
 from pathlib import Path
 import sys
@@ -14,8 +15,10 @@ class Student:
     marks: float
 
     def __post_init__(self):
-        if not self.roll_no.strip() or not self.name.strip():
-            raise ValueError("roll number and name cannot be empty")
+        if not isinstance(self.roll_no, str) or not self.roll_no.strip():
+            raise ValueError("roll number cannot be empty")
+        if not isinstance(self.name, str) or not self.name.strip():
+            raise ValueError("student name cannot be empty")
         if not 0 <= float(self.marks) <= 100:
             raise ValueError("marks must be between 0 and 100")
 
@@ -34,6 +37,16 @@ def student_key(field):
 
 def sort_students(students, field, algorithm="merge"):
     if algorithm not in SORTS: raise ValueError(f"Unknown sorting algorithm: {algorithm}")
+    if algorithm == "radix":
+        if field != "marks":
+            raise ValueError("Radix Sort needs integer keys; use it for whole-number marks, not text fields")
+        if any(not float(student.marks).is_integer() for student in students):
+            raise ValueError("Radix Sort requires whole-number marks")
+        buckets = defaultdict(deque)
+        for student in students:
+            buckets[int(student.marks)].append(student)
+        ordered_marks = SORTS["radix"]([int(student.marks) for student in students])
+        return [buckets[mark].popleft() for mark in ordered_marks]
     return SORTS[algorithm](students, key=student_key(field))
 
 
@@ -55,11 +68,11 @@ def search_students(students, field, value, strategy="binary"):
 
 def demo_records():
     return [
-        Student("IC045", "Aarav Shah", 86.5),
-        Student("IC012", "Diya Patel", 91.0),
-        Student("IC031", "Kabir Rao", 78.0),
-        Student("IC008", "Meera Joshi", 91.0),
-        Student("IC027", "Aarav Shah", 82.5),
+        Student("IC045", "Aarav Shah", 86),
+        Student("IC012", "Diya Patel", 91),
+        Student("IC031", "Kabir Rao", 78),
+        Student("IC008", "Meera Joshi", 91),
+        Student("IC027", "Aarav Shah", 82),
     ]
 
 

@@ -24,19 +24,18 @@ class TestSortingAlgorithms(unittest.TestCase):
                     self.assertEqual(algorithm(case), sorted(case))
                     self.assertEqual(case, original)
 
-    def test_stable_sort_implementations(self):
+    def test_stable_sorts(self):
         records = [("x", 1), ("y", 1), ("z", 0)]
         for algorithm in (bubble_sort, insertion_sort, merge_sort):
             self.assertEqual(algorithm(records, key=lambda item: item[1]),
                              [("z", 0), ("x", 1), ("y", 1)])
 
-    def test_radix_type_validation(self):
+    def test_radix_validation(self):
         with self.assertRaises(TypeError): radix_sort([1, 2.5, 3])
 
-    def test_binary_search_first_duplicate_and_missing(self):
-        data = [1, 2, 2, 2, 5, 8]
-        self.assertEqual(binary_search(data, 2), 1)
-        self.assertEqual(binary_search(data, 7), -1)
+    def test_binary_search_boundaries(self):
+        self.assertEqual(binary_search([1, 2, 2, 2, 5, 8], 2), 1)
+        self.assertEqual(binary_search([1, 2, 5], 7), -1)
         self.assertEqual(binary_search([], 1), -1)
 
 
@@ -48,22 +47,26 @@ class TestStudentRecords(unittest.TestCase):
             Student("R02", "Aarav Shah", 91),
         ]
 
-    def test_sort_each_field(self):
+    def test_sort_each_field_including_radix_marks(self):
         self.assertEqual([s.roll_no for s in sort_students(self.records, "roll_no")],
                          ["R01", "R02", "R03"])
         self.assertEqual([s.name for s in sort_students(self.records, "name")],
                          ["Aarav Shah", "Aarav Shah", "Diya Patel"])
-        self.assertEqual([s.marks for s in sort_students(self.records, "marks")], [78, 91, 91])
+        self.assertEqual([s.marks for s in sort_students(self.records, "marks", "radix")],
+                         [78, 91, 91])
 
     def test_search_duplicates_and_missing(self):
         self.assertEqual(len(search_students(self.records, "name", "aarav shah")), 2)
         self.assertEqual(len(search_students(self.records, "marks", 91, "linear")), 2)
         self.assertEqual(search_students(self.records, "roll_no", "R99"), [])
 
-    def test_invalid_records_and_fields(self):
+    def test_invalid_records_and_radix_fields(self):
         with self.assertRaises(ValueError): Student("", "Name", 50)
         with self.assertRaises(ValueError): Student("R1", "Name", 120)
         with self.assertRaises(ValueError): sort_students(self.records, "age")
+        with self.assertRaises(ValueError): sort_students(self.records, "name", "radix")
+        decimal = [Student("R4", "Name", 75.5)]
+        with self.assertRaises(ValueError): sort_students(decimal, "marks", "radix")
 
 
 class TestSearchEngine(unittest.TestCase):
@@ -78,8 +81,7 @@ class TestSearchEngine(unittest.TestCase):
 
     def test_chaining_collision_and_delete(self):
         table = ChainingHashTable(5)
-        table.add("a", "first")
-        table.add("f", "second")  # both hash to bucket 2 at capacity 5
+        table.add("a", "first"); table.add("f", "second")
         self.assertGreater(table.collision_count, 0)
         self.assertEqual(table.get("f"), "second")
         self.assertTrue(table.remove("a"))
@@ -87,8 +89,7 @@ class TestSearchEngine(unittest.TestCase):
 
     def test_linear_probing_collision_and_tombstone(self):
         table = LinearProbingHashTable(5)
-        table.add("a", "first")
-        table.add("f", "second")
+        table.add("a", "first"); table.add("f", "second")
         self.assertGreater(table.collision_count, 0)
         self.assertEqual(table.get("f"), "second")
         self.assertTrue(table.remove("a"))
@@ -99,8 +100,7 @@ class TestSearchEngine(unittest.TestCase):
     def test_hash_resizing(self):
         chain, linear = ChainingHashTable(5), LinearProbingHashTable(5)
         for i in range(20):
-            chain.add(f"word{i}", str(i))
-            linear.add(f"word{i}", str(i))
+            chain.add(f"word{i}", str(i)); linear.add(f"word{i}", str(i))
         for i in range(20):
             self.assertEqual(chain.get(f"word{i}"), str(i))
             self.assertEqual(linear.get(f"word{i}"), str(i))
