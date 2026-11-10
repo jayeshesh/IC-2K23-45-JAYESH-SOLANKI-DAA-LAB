@@ -29,3 +29,7 @@ All Symbols (Sorted by Identifier):
 
 ## 5. Real-life application
 Compiler semantic analysis passes (GCC, Clang, Rustc), linters, and IDE language servers.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

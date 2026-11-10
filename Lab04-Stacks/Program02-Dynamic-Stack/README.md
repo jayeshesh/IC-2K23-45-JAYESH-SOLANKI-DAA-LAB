@@ -26,3 +26,7 @@ After pop: ['A', 'B']
 
 ## 5. Real-life application
 Programming language execution call stacks, JVM operand stack, and unlimited backtracking history.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

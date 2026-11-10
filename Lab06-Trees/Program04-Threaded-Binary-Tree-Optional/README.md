@@ -22,3 +22,7 @@ Threaded BST Inorder (O(1) space): [5, 10, 15, 20, 30]
 
 ## 5. Real-life application
 Resource-constrained real-time microcontrollers with minimal call-stack capacity.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

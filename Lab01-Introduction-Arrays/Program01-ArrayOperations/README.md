@@ -52,3 +52,7 @@ _To be completed after execution and reflection._
 
 ## Tests and screenshots
 See `tests/test_unit1.py`. Capture an actual terminal screenshot after running the program.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

@@ -51,3 +51,7 @@ Classical line editors such as UNIX `ed`, `nano`, and the internal buffer repres
 ## 7. Learning outcomes
 - Implemented real-world text editing buffer data structures using doubly linked lists.
 - Avoided large contiguous memory reallocations during frequent document modifications.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

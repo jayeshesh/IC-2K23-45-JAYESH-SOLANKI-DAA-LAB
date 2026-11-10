@@ -24,3 +24,7 @@ Two stacks (`values` and `operators`) evaluate the expression in a single pass. 
 
 ## 5. Real-life application
 Spreadsheet formula calculation engines (e.g. Microsoft Excel, Google Sheets) and programming language expression parsers.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

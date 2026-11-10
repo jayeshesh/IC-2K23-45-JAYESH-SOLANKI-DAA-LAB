@@ -25,3 +25,7 @@ Words with prefix 'b': ['binary']
 
 ## 5. Real-life application
 Search engine query autocomplete, mobile predictive keyboard dictionaries, and filesystem path auto-suggestion in bash shells.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

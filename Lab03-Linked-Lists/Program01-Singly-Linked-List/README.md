@@ -55,3 +55,7 @@ Underlying implementation for memory allocators (free lists), hash table separat
 ## 8. Learning outcomes
 - Implemented node-based dynamic data structures without fixed capacity constraints.
 - Mastered pointer manipulation, edge-case handling (empty list, single element), and in-place list inversion.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

@@ -45,3 +45,7 @@ Music and video streaming services (Spotify, YouTube Music "Repeat All" queue), 
 ## 7. Learning outcomes
 - Implemented loop-based continuous iteration through circular linked lists.
 - Built clean domain models separating business logic from raw pointer structures.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

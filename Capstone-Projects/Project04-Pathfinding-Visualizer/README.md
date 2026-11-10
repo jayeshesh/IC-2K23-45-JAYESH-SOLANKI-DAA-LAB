@@ -29,3 +29,7 @@ S * * * .
 
 ## 5. Learning outcomes
 Visualized graph search dynamics and verified the optimality properties of BFS and Dijkstra.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

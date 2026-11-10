@@ -29,3 +29,7 @@ File System Tree:
 
 ## 5. Real-life application
 UNIX VFS (Virtual File System) inode trees, Windows NTFS B-tree directory structures.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

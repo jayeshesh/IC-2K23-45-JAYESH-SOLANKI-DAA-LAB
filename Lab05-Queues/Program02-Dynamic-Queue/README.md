@@ -25,3 +25,7 @@ Peek: Task2
 
 ## 5. Real-life application
 Asynchronous task queues (e.g., Celery, RabbitMQ workers) and operating system message-passing queues.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

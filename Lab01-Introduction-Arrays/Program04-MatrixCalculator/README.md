@@ -51,3 +51,7 @@ _To be completed after execution and reflection._
 
 ## Tests and screenshots
 See `tests/test_unit1.py`. Run the menu program and capture an actual terminal screenshot.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

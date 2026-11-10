@@ -45,3 +45,7 @@ Complete after running and reflecting on the three lookup strategies.
 
 ## Tests and screenshots
 Tests cover lookup, updates, collisions, deletion, tombstones, and resizing. Capture a genuine CLI screenshot.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

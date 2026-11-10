@@ -26,3 +26,7 @@ Evaluated Prefix: 45.0
 
 ## 5. Real-life application
 Scientific calculators (e.g. Hewlett-Packard RPN calculators), Forth programming language interpreters, and PostScript printers.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

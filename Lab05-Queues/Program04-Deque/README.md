@@ -26,3 +26,7 @@ Remaining: [10]
 
 ## 5. Real-life application
 Sliding-window maximum algorithms, palindrome verification, work-stealing scheduling algorithms in multi-threaded runtimes.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

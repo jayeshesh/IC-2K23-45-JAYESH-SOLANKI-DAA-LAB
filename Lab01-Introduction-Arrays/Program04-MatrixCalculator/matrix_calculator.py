@@ -1,5 +1,6 @@
 """Menu-driven matrix calculator for IC-307D Unit 1."""
 
+import sys
 from typing import Sequence
 
 
@@ -74,6 +75,18 @@ def _read_matrix(input_fn=input, output_fn=print) -> list[list[float]]:
             output_fn(f"Invalid matrix input: {exc}. Please try again.")
 
 
+def demo() -> None:
+    print("MATRIX CALCULATOR DEMO")
+    a = [[1.0, 2.0], [3.0, 4.0]]
+    b = [[5.0, 6.0], [7.0, 8.0]]
+    print("Matrix A:", a)
+    print("Matrix B:", b)
+    print("Addition (A + B):", add(a, b))
+    print("Multiplication (A * B):", multiply(a, b))
+    print("Transpose (A^T):", transpose(a))
+    print("Determinant det(A):", determinant(a))
+
+
 def main() -> None:
     """Run the menu-driven calculator until the user chooses Exit."""
     operations = {
@@ -85,7 +98,11 @@ def main() -> None:
     while True:
         print("\nMATRIX CALCULATOR")
         print("1. Addition\n2. Multiplication\n3. Transpose\n4. Determinant\n0. Exit")
-        choice = input("Choose an operation: ").strip()
+        try:
+            choice = input("Choose an operation: ").strip()
+        except EOFError:
+            demo()
+            return
         if choice == "0":
             print("Exiting matrix calculator.")
             return
@@ -108,4 +125,9 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) > 1 and sys.argv[1] == "--demo":
+        demo()
+    elif not sys.stdin.isatty():
+        demo()
+    else:
+        main()

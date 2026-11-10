@@ -23,3 +23,7 @@ CS101 -> CS102 -> DS201 -> ALGO301 -> AI401
 
 ## 5. Real-life application
 Build dependency resolvers (Makefiles, CMake, npm package dependency graphs) and university degree audit degree planning systems.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

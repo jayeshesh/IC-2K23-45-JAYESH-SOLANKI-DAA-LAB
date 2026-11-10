@@ -25,3 +25,7 @@ AVL Root Height: 3
 
 ## 5. Real-life application
 High-frequency database search trees, router IP routing lookup tables, and in-memory key-value indexes.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

@@ -25,3 +25,7 @@ After wrapping enqueue D: ['B', 'C', 'D']
 
 ## 5. Real-life application
 Circular audio/video streaming buffers, keyboard input interrupt buffers, and network packet circular queues.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

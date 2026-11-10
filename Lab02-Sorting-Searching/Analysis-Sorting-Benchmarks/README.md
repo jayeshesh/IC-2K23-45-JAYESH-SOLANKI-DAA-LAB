@@ -38,3 +38,7 @@ A measured run is preserved in [benchmark-results.md](./benchmark-results.md) an
 
 ## Analysis
 See [benchmark-results.md](./benchmark-results.md) for the measured comparison and observations. Timings are hardware-specific; use the theoretical complexity sections in the algorithm READMEs as well.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

@@ -24,3 +24,7 @@ Prefix:  -+A*B^-^CDE+F*GHI
 
 ## 5. Real-life application
 Compiler parsing front-ends, AST generation, and stack-based bytecode virtual machines (e.g. JVM, Python disassembler).
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

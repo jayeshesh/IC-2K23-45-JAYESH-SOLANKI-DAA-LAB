@@ -25,3 +25,7 @@ Front: 2
 
 ## 5. Real-life application
 Fixed hardware buffering in embedded communication peripherals (UART, SPI buffers).
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

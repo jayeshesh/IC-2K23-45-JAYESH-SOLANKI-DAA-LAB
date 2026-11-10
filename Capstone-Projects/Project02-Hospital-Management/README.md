@@ -38,3 +38,7 @@ Recent visits: ['Jayesh (Cardiac Arrest) (Triage Priority 1)', 'Priya (Sprained 
 
 ## 4. Learning outcomes
 Integrated heaps, stacks, trees, and graphs into a cohesive real-world clinical workflow.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

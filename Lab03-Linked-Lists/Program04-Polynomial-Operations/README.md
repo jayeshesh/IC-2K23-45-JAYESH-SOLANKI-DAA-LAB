@@ -46,3 +46,7 @@ Computer Algebra Systems (CAS) like SymPy and Mathematica, graphics rendering cu
 ## 7. Learning outcomes
 - Implemented mathematical structures as ordered dynamic linked chains.
 - Applied the two-pointer merge paradigm to symbolic polynomial arithmetic.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

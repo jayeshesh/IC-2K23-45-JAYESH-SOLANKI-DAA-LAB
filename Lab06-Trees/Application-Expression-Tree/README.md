@@ -23,3 +23,7 @@ Evaluated Value: 16.0
 
 ## 5. Real-life application
 Compiler intermediate representation (IR), symbolic differentiation engines, SQL query parse trees.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

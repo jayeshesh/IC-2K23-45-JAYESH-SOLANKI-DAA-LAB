@@ -25,3 +25,7 @@ Extract next: Important Notice
 
 ## 5. Real-life application
 Dijkstra's shortest path algorithm, Prim's minimum spanning tree, Huffman coding compression, and OS real-time thread scheduling.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

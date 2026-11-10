@@ -26,3 +26,7 @@ Remaining Wait Time: 10 minutes
 
 ## 5. Real-life application
 Hospital triage ticketing systems, bank teller lines, airline boarding queues, and call center IVR routing.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

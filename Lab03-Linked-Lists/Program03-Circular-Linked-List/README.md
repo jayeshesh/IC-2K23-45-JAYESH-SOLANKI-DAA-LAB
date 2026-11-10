@@ -45,3 +45,7 @@ Round-robin CPU process schedulers, media players cycling songs continuously, an
 ## 7. Learning outcomes
 - Implemented cyclic pointer data structures without sentinel termination (`null`).
 - Managed the cyclic invariant across insertions, deletions, and reversals.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

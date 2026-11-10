@@ -39,3 +39,7 @@ Complete after testing the application.
 
 ## Tests and screenshots
 Tests cover field sorting, Radix on whole-number marks, duplicate matches, missing values, and invalid input. Capture genuine terminal screenshots.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

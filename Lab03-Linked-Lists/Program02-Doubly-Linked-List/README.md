@@ -45,3 +45,7 @@ Web browser backward/forward navigation history, LRU Cache internal structures, 
 ## 7. Learning outcomes
 - Implemented bidirectional linked structures with synchronized two-way pointers.
 - Verified constant-time operations at both ends using explicit tail pointers.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

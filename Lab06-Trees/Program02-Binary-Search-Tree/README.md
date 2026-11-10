@@ -29,3 +29,7 @@ After deleting 30: [20, 40, 50, 60, 70, 80]
 
 ## 5. Real-life application
 Database indexing, filesystem path searches, symbol lookup tables.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

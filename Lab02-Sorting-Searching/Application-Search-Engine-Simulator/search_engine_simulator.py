@@ -196,4 +196,14 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    if len(sys.argv) > 1 and sys.argv[1] == "--demo":
+        demo()
+    elif not sys.stdin.isatty():
+        demo()
+    else:
+        try:
+            main()
+        except EOFError:
+            demo()
+

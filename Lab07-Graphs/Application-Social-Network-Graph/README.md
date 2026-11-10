@@ -24,3 +24,7 @@ Social Clusters (Connected Components): [['Aarav', 'Jayesh', 'Priya', 'Rohan'], 
 
 ## 5. Real-life application
 Facebook/LinkedIn "People You May Know" recommendation engines, fraud detection community ring identification.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

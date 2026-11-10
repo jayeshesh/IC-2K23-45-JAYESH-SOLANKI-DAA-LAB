@@ -28,3 +28,7 @@ Processing order FIFO: {'order_id': 1, 'customer': 'Jayesh Solanki', 'items': ['
 
 ## 4. Learning outcomes
 Coordinated multiple core data structures to drive a realistic distributed e-commerce workflow.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

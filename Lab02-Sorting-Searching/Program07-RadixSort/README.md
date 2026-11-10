@@ -47,3 +47,7 @@ Complete after executing the program and reflecting on the result.
 
 ## Tests and screenshots
 See [test_unit2.py](../../../tests/test_unit2.py). Capture a real terminal screenshot after running this program.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

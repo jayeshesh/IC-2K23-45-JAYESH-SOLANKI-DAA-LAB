@@ -26,3 +26,7 @@ DFS Iterative:     ['A', 'B', 'D', 'E', 'F', 'C']
 
 ## 5. Real-life application
 Web crawler URL exploration (BFS), social network distance calculation (BFS), maze path exploration and cycle detection (DFS).
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

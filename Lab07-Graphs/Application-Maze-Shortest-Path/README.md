@@ -23,3 +23,7 @@ Maze Shortest Path from (0,0) to (3,3):
 
 ## 5. Real-life application
 Autonomous mobile robot warehouse navigation (AGVs in Amazon fulfillment centers), video game AI pathfinding, and PCB wire routing.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

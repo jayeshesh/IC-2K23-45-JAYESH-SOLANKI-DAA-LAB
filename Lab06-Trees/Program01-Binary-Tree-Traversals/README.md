@@ -28,3 +28,7 @@ Postorder (Iter): [4, 5, 2, 3, 1]
 
 ## 5. Real-life application
 Abstract syntax tree (AST) code generators, hierarchical DOM tree rendering, and file hierarchy serialization.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

@@ -28,3 +28,7 @@ Time  8 ->  9 : Executing P1
 
 ## 5. Real-life application
 Operating system CPU schedulers (Linux Completely Fair Scheduler, Windows thread dispatcher) and network traffic fair queuing.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

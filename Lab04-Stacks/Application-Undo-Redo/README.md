@@ -27,3 +27,7 @@ After 2 undos: ''
 
 ## 5. Real-life application
 Standard desktop applications (MS Word, VS Code `Ctrl+Z` / `Ctrl+Y`, Photoshop history brush, CAD design software).
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

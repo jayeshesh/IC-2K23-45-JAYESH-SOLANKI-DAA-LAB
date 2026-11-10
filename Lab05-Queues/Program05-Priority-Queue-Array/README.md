@@ -25,3 +25,7 @@ Extract next min: Medium Task
 
 ## 5. Real-life application
 Low-throughput event queues with frequent fast insertions and rare batch extractions.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

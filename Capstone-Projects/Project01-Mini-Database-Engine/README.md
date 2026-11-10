@@ -30,3 +30,7 @@ Secondary BST Index Query (Salary 85000): [{'id': 1, ...}, {'id': 3, ...}]
 
 ## 5. Learning outcomes
 Synthesized hash tables, BST indexing, and relational records into a complete functional mini database engine.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

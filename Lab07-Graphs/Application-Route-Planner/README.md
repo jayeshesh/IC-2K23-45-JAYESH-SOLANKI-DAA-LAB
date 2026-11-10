@@ -25,3 +25,7 @@ Discovered 2 distinct redundant routes:
 
 ## 5. Real-life application
 BGP multi-homed ISP routing failover, microservice service mesh path discovery (Istio, Envoy), power grid resilience analysis.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

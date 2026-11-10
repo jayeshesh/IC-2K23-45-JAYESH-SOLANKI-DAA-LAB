@@ -24,3 +24,7 @@ Graph List Neighbors of A: ['B', 'C']
 
 ## 5. Real-life application
 Dense road traffic grid modeling (matrix) vs large-scale social networks and the internet web graph (adjacency list).
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)

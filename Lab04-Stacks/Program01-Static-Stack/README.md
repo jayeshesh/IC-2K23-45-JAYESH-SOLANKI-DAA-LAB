@@ -26,3 +26,7 @@ After pop: [10, 20]
 
 ## 5. Real-life application
 Embedded firmware call stacks, fixed-size interrupt buffers, and hardware CPU registers.
+
+
+## Visual Execution Output
+![Program Execution Screenshot](screenshots/screenshot.png)
