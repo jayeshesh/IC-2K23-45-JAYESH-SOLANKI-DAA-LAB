@@ -1,30 +1,40 @@
-# Hospital Management System
+# Capstone Project 2: Hospital Management System
 
-**Status:** Not started
+**Language:** Python 3.10+  
+**Run:** `python Capstone-Projects/Project02-Hospital-Management/hospital_management.py`
 
-## Problem statement
-Patient queue (priority queue), doctor availability (stack for recent visits), department hierarchy (tree), and patient relationship graph.
+## 1. Problem statement
+Design and implement an integrated Hospital Operations System coordinating four critical algorithmic modules:
+1. **Patient Emergency Queue**: Priority queue (Binary Min-Heap) triage system.
+2. **Doctor Availability**: LIFO Stack for recent medical consultation history and visit undo.
+3. **Department Hierarchy**: N-ary Tree organizing medical departments and specialty clinics.
+4. **Patient Relationship Graph**: Undirected graph for epidemiology and contact tracing.
 
-## Scope and requirements
-_Expand into clear functional requirements before implementation._
+## 2. Complexity analysis
+| Subsystem | Operation | Time Complexity | Auxiliary Space |
+|---|---|---:|---:|
+| Triage Queue | Admit / Treat | O(log n) | O(n) |
+| Consultation History | Push / Pop | O(1) | O(1) |
+| Department Tree | Add Dept / Display | O(1) / O(V) | O(height) |
+| Contact Graph | Add / Trace Contact | O(1) / O(deg) | O(V + E) |
 
-## Data structures and algorithms
-_List what is used and explain why._
+## 3. Sample I/O
+```text
+=== 1. Hospital Department Hierarchy ===
+- Chief Medical Officer
+  - Cardiology
+    - ICU
+    - Cardiac Surgery
+  - Neurology
+    - Neuro-Trauma
 
-## Architecture / diagram
-_Add a draw.io or PlantUML diagram in `docs/diagrams/` and link it here._
+=== 2. Patient Triage (Priority Queue) ===
+Next for Emergency Treatment: Jayesh (Cardiac Arrest)
+Next for Emergency Treatment: Priya (Sprained Ankle)
 
-## Module design
-_To be documented._
+=== 3. Doctor Consultation History (Stack) ===
+Recent visits: ['Jayesh (Cardiac Arrest) (Triage Priority 1)', 'Priya (Sprained Ankle) (Triage Priority 3)']
+```
 
-## Algorithms and pseudocode
-_Document each major operation._
-
-## Testing and sample I/O
-_Add real tests, output, and screenshots after execution._
-
-## Complexity analysis
-_Analyze best, average, and worst cases where applicable._
-
-## Learning outcomes and limitations
-_To be completed after implementation._
+## 4. Learning outcomes
+Integrated heaps, stacks, trees, and graphs into a cohesive real-world clinical workflow.
