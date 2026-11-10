@@ -1,63 +1,54 @@
 # 1D Array Operations
 
-**Unit:** Unit 1: Introduction to Data Structures & Arrays (CO1)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab01-Introduction-Arrays/Program01-ArrayOperations/array_operations.py`
 
-## 1. Problem statement
-Implement 1D array insert, delete, search, and rotate operations.
+## Problem statement
+Implement one-dimensional array insertion, deletion, searching, and rotation.
 
-## 2. Approach
-_To be completed after selecting and implementing the approach._
+## Approach
+Represent the array using a Python list. Operations return a new list for insert/delete/rotate, preserving the caller's original list. Search returns the first matching zero-based index or -1.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## Algorithm and pseudocode
+- Insert: validate position, copy list, insert value.
+- Delete: validate position, copy list, remove and return the removed value.
+- Search: scan from left to right and stop at the first match.
+- Rotate right: reduce rotation count modulo array length, then join the suffix and prefix.
 
-## 4. Pseudocode
 ```text
-START
-  // Add language-independent pseudocode.
-END
+ROTATE_RIGHT(A, k)
+  if A is empty: return empty array
+  shift = k modulo length(A)
+  return A[length(A)-shift:] + A[:length(A)-shift]
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
+## Dry run
+Input: `[10, 20, 30, 40]`, rotate right by 2.  
+Shift = 2; suffix = `[30, 40]`; prefix = `[10, 20]`; result = `[30, 40, 10, 20]`.
 
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
+## Complexity
+For n elements:
+| Operation | Best | Average | Worst | Auxiliary space |
+|---|---:|---:|---:|---:|
+| Insert at index | O(1) at end | O(n) | O(n) | O(n) due to copy |
+| Delete at index | O(1) at end | O(n) | O(n) | O(n) due to copy |
+| Search | O(1) | O(n) | O(n) | O(1) |
+| Rotate | O(n) | O(n) | O(n) | O(n) |
 
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
+## Sample I/O
 ```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
+Initial array: [10, 20, 30, 40, 50]
+Insert 25 at index 2: [10, 20, 25, 30, 40, 50]
+Delete index 1 (removed 20): [10, 30, 40, 50]
+Search for 40: 3
+Rotate right by 2: [40, 50, 10, 20, 30]
 ```
 
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
+## Real-life application
+Array-based buffers, playlists, and circular data windows.
 
-## 9. Real-life application
-_To be documented._
+## Learning outcomes
+_To be completed after execution and reflection._
 
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## Tests and screenshots
+See `tests/test_unit1.py`. Capture an actual terminal screenshot after running the program.

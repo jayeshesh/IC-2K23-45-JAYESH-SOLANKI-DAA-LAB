@@ -1,0 +1,3 @@
+# Python 3.10+ is required. Core lab programs use the Python standard library.
+# Unit 2 uses Matplotlib to generate sorting benchmark graphs.
+matplotlib>=3.8

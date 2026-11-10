@@ -1,63 +1,52 @@
-# Sparse Matrix
+# Sparse Matrix Representation and Operations
 
-**Unit:** Unit 1: Introduction to Data Structures & Arrays (CO1)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab01-Introduction-Arrays/Program03-SparseMatrix/sparse_matrix.py`
 
-## 1. Problem statement
-Represent a sparse matrix in triple format and implement basic operations; analyze space optimization.
+## Problem statement
+Represent a sparse matrix in triple format, reconstruct it, transpose it, add/multiply sparse matrices, and compare storage requirements.
 
-## 2. Approach
-_To be completed after selecting and implementing the approach._
+## Approach
+Use a header tuple `(rows, columns, nonzero_count)`, followed by zero-based `(row, column, value)` entries sorted in row-major order. Zero values are omitted. Conversion validates dimensions, entry count, coordinates, and duplicate entries.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
-
-## 4. Pseudocode
+## Algorithm and pseudocode
 ```text
-START
-  // Add language-independent pseudocode.
-END
+TO_TRIPLES(M)
+  entries = all (row, column, value) where value is not zero
+  return (row_count, column_count, entry_count) followed by entries
+```
+Addition accumulates values by coordinate and removes entries that cancel to zero. Transpose swaps each coordinate and sorts the result. Multiplication accumulates products for matching inner indices.
+
+## Dry run
+Input matrix: `[[0, 5], [2, 0]]`.  
+Triple form: `[(2, 2, 2), (0, 1, 5), (1, 0, 2)]`.
+
+## Complexity
+Let r×c be the matrix size, z the number of nonzero entries, and zA/zB the nonzero counts of operands.
+| Operation | Time | Auxiliary space |
+|---|---:|---:|
+| Dense → triples | O(rc) | O(z) |
+| Triples → dense | O(rc + z) | O(rc) |
+| Transpose | O(z log z) | O(z) |
+| Addition | O(zA + zB + z log z) | O(z) |
+| Multiplication (current nested sparse join) | O(zA × max row/column match work) | O(output nonzeros) |
+
+The multiplication bound depends on the sparsity pattern; it is intentionally not presented as a single tight asymptotic bound for every matrix.
+
+## Sample I/O
+```text
+Triple representation: [(3, 3, 2), (0, 2, 5), (2, 0, 2)]
+Reconstructed matrix: [[0, 0, 5], [0, 0, 0], [2, 0, 0]]
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
+## Space analysis
+Triple storage uses 3z + 3 scalar values including its header versus rc scalar positions in a dense matrix. For small or dense matrices, triple storage may not save space.
 
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
+## Real-life application
+Sparse graphs, scientific matrices, and systems where most matrix entries are zero.
 
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
+## Learning outcomes
+_To be completed after execution and reflection._
 
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## Tests and screenshots
+See `tests/test_unit1.py`. Capture a genuine terminal screenshot after execution.
