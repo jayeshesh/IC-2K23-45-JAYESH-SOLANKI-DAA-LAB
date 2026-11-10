@@ -111,11 +111,19 @@ class LinearProbingHashTable:
     def add(self, key, value):
         key = normalize(key)
         if (self.size + 1) / self.capacity > 0.65: self._resize()
+        initial_index = self._hash(key)
+        initial_item = self.slots[initial_index]
         index, found = self._find(key)
         if index is None:
             self._resize()
+            initial_index = self._hash(key)
+            initial_item = self.slots[initial_index]
             index, found = self._find(key)
-        if not found and self.slots[index] is not None: self.collision_count += 1
+        # A collision is a different active key already occupying the
+        # key's original hash slot, even when the final probe slot is empty.
+        if (not found and initial_item is not None
+                and initial_item is not self.DELETED and initial_item[0] != key):
+            self.collision_count += 1
         self.slots[index] = (key, value)
         if not found: self.size += 1
 
