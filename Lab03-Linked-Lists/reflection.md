@@ -1,18 +1,17 @@
-# Unit 3: Linked Lists | Reflection
+# Unit 3 Reflection – Linked Lists
 
-Complete this after implementing and testing the programs in this unit.
+**Student:** Jayesh Solanki (Roll No: IC-2K23-45)  
+**Course:** IC-307D | Data Structures and Algorithms Lab
 
-## What I learned
-_To be completed._
+## 1. What was learned
+- Designing and manipulating node-based structures where memory allocation is dynamic and non-contiguous.
+- Managing one-way, two-way, and cyclic pointer relationships without leaking or losing reference handles.
+- Applying two-pointer merge techniques to polynomial arithmetic in $O(m + n)$ time.
 
-## Difficulties faced
-_Describe the challenge and how it was resolved._
+## 2. Difficulties encountered
+- Ensuring edge cases (empty list, single element list, operating at index 0 or tail) do not raise `AttributeError: 'NoneType' object has no attribute 'next'`.
+- Maintaining the circular loop invariant in circular lists across in-place reversals.
 
-## Optimizations made
-_Explain what changed and why._
-
-## Testing and observations
-_Record real tests, results, and limitations._
-
-## Further improvements
-_To be completed._
+## 3. Optimizations applied
+- Maintained a dedicated `tail` pointer in `DoublyLinkedList` for instant $O(1)$ append and reverse operations.
+- Avoided full array copies or linear shifts in the text editor buffer by leveraging pointer mutations.

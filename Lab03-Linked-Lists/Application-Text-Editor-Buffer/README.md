@@ -1,63 +1,53 @@
-# Text Editor Buffer
+# Text Editor Buffer (Line-by-line editing using Doubly Linked List)
 
-**Unit:** Unit 3: Linked Lists (CO1)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab03-Linked-Lists/Application-Text-Editor-Buffer/text_editor_buffer.py`
 
 ## 1. Problem statement
-Build a line-by-line editing buffer using a doubly linked list.
+Design and implement an in-memory line-by-line text editor buffer where lines can be inserted, edited, and deleted at arbitrary positions efficiently without massive array resizing and copying overhead.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+Using a Doubly Linked List (`LineNode`), each node stores a single text string line. Inserting or deleting lines in the middle requires only pointer re-wiring ($O(1)$ after locating the line) instead of shifting all subsequent lines in contiguous array memory ($O(n)$ shifts).
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
-
-## 4. Pseudocode
+## 3. Algorithm and Pseudocode
 ```text
-START
-  // Add language-independent pseudocode.
-END
+INSERT_LINE(buffer, line_no, text):
+  new_node = LineNode(text)
+  curr = buffer.head
+  traverse to line_no - 1
+  insert new_node between curr and curr.next
+  increment line_count
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
+## 4. Complexity analysis
+| Operation | Best | Average | Worst | Auxiliary space |
+|---|---:|---:|---:|---:|
+| Insert at line $k$ | O(1) | O(k) | O(n) | O(1) |
+| Delete at line $k$ | O(1) | O(k) | O(n) | O(1) |
+| Display all lines | O(n) | O(n) | O(n) | O(n) |
 
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
+## 5. Sample I/O
 ```text
-Sample input:
-_To be added after testing._
+Initial Buffer:
+  1 | def greet(name):
+  2 |     print(f'Hello, {name}')
+  3 | greet('Jayesh')
 
-Sample output:
-_To be added after testing._
+Inserting comment at line 1:
+  1 | # MCA AI/DAA Program
+  2 | def greet(name):
+  3 |     print(f'Hello, {name}')
+  4 | greet('Jayesh')
+
+Deleting line 3:
+  1 | # MCA AI/DAA Program
+  2 | def greet(name):
+  3 | greet('Jayesh')
 ```
 
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
+## 6. Real-life application
+Classical line editors such as UNIX `ed`, `nano`, and the internal buffer representations in text editors like Emacs / Vim.
 
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 7. Learning outcomes
+- Implemented real-world text editing buffer data structures using doubly linked lists.
+- Avoided large contiguous memory reallocations during frequent document modifications.

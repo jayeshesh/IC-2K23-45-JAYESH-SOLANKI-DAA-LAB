@@ -1,63 +1,48 @@
-# Polynomial Representation and Addition
+# Polynomial Operations using Linked List
 
-**Unit:** Unit 3: Linked Lists (CO1)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab03-Linked-Lists/Program04-Polynomial-Operations/polynomial_operations.py`
 
 ## 1. Problem statement
-Represent polynomials and implement polynomial addition using linked lists.
+Represent multivariate or univariate polynomials using singly linked lists of non-zero terms sorted in descending order of exponent, and implement an efficient $O(m + n)$ polynomial addition algorithm.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+Each node stores `(coefficient, exponent, next)`. Terms with identical exponents are combined upon insertion. Polynomial addition employs a two-pointer merge approach similar to Merge Sort's merge step: comparing exponents of current nodes from both polynomials, advancing the pointer with the higher exponent, or combining coefficients when exponents match.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
-
-## 4. Pseudocode
+## 3. Algorithm and Pseudocode
 ```text
-START
-  // Add language-independent pseudocode.
-END
+ADD_POLYNOMIALS(P1, P2):
+  result = empty polynomial
+  p1 = P1.head, p2 = P2.head
+  while p1 != null and p2 != null:
+    if p1.exp > p2.exp:
+      result.append(p1.coeff, p1.exp); p1 = p1.next
+    else if p1.exp < p2.exp:
+      result.append(p2.coeff, p2.exp); p2 = p2.next
+    else:
+      sum_c = p1.coeff + p2.coeff
+      if sum_c != 0: result.append(sum_c, p1.exp)
+      p1 = p1.next; p2 = p2.next
+  append remaining terms of p1 and p2
+  return result
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
+## 4. Complexity analysis
+| Operation | Best | Average | Worst | Auxiliary space |
+|---|---:|---:|---:|---:|
+| Insert term | O(1) | O(k) | O(n) | O(1) |
+| Polynomial Addition | O(m + n) | O(m + n) | O(m + n) | O(m + n) |
 
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
+## 5. Sample I/O
 ```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
+P1: 5x^3 + 4x^2 + 2
+P2: -5x^3 + 3x^2 + 5x
+P1 + P2: 7x^2 + 5x + 2
 ```
 
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
+## 6. Real-life application
+Computer Algebra Systems (CAS) like SymPy and Mathematica, graphics rendering curve representations, and symbolic calculus evaluation.
 
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 7. Learning outcomes
+- Implemented mathematical structures as ordered dynamic linked chains.
+- Applied the two-pointer merge paradigm to symbolic polynomial arithmetic.

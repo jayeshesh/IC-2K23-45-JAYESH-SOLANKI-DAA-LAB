@@ -1,63 +1,57 @@
 # Singly Linked List
 
-**Unit:** Unit 3: Linked Lists (CO1)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab03-Linked-Lists/Program01-Singly-Linked-List/singly_linked_list.py`
 
 ## 1. Problem statement
-Implement a singly linked list with insert at position, delete, reverse, and concatenate.
+Implement a singly linked list supporting dynamic memory node linking, insertion at arbitrary 0-based positions, deletion at arbitrary positions, in-place reversal, and list concatenation.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+A node structure contains a `data` field and a pointer/reference `next` to the succeeding node. The `SinglyLinkedList` class maintains the `head` reference and a size counter. Insertion and deletion traverse to the predecessor index $(pos - 1)$ to update pointer references. In-place reversal uses three pointers (`prev`, `curr`, `next_node`) to invert pointers in a single linear pass with $O(1)$ auxiliary memory.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
-
-## 4. Pseudocode
+## 3. Algorithm and Pseudocode
 ```text
-START
-  // Add language-independent pseudocode.
-END
+REVERSE(head):
+  prev = null
+  curr = head
+  while curr != null:
+    next_node = curr.next
+    curr.next = prev
+    prev = curr
+    curr = next_node
+  return prev
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
+## 4. Dry run
+Initial: `[10 -> 20 -> 30]`. Reversal iteration:
+1. `curr = 10`, `next = 20`, `10.next = None`, `prev = 10`
+2. `curr = 20`, `next = 30`, `20.next = 10`, `prev = 20`
+3. `curr = 30`, `next = None`, `30.next = 20`, `prev = 30`
+Terminates: `head` updated to `30 -> 20 -> 10`.
 
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
+## 5. Complexity analysis
+| Operation | Best | Average | Worst | Auxiliary space |
+|---|---:|---:|---:|---:|
+| Insert at head (pos=0) | O(1) | O(1) | O(1) | O(1) |
+| Insert at position $k$ | O(1) | O(k) | O(n) | O(1) |
+| Delete at head (pos=0) | O(1) | O(1) | O(1) | O(1) |
+| Delete at position $k$ | O(1) | O(k) | O(n) | O(1) |
+| Reverse | O(n) | O(n) | O(n) | O(1) |
+| Concatenate | O(m + n) | O(m + n) | O(m + n) | O(m + n) |
 
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
+## 6. Sample I/O
 ```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
+Initial SLL: []
+After appending 10, 20, 30: [10, 20, 30]
+After inserting 15 at index 1: [10, 15, 20, 30]
+After deleting at index 2 (removed 20): [10, 15, 30]
+After in-place reverse: [30, 15, 10]
+Concatenated with [99, 100]: [30, 15, 10, 99, 100]
 ```
 
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
+## 7. Real-life application
+Underlying implementation for memory allocators (free lists), hash table separate chaining, and undo history buffers.
 
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 8. Learning outcomes
+- Implemented node-based dynamic data structures without fixed capacity constraints.
+- Mastered pointer manipulation, edge-case handling (empty list, single element), and in-place list inversion.

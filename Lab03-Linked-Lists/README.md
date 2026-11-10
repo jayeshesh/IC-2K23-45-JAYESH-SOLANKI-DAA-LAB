@@ -1,31 +1,62 @@
-# Unit 3: Linked Lists
+# Lab 03 – Linked Lists
 
 **Course:** IC-307D | Data Structures and Algorithms Lab  
-**Course Outcome:** CO1
+**Unit:** Unit 3: Linked Lists (CO1)  
+**Student:** Jayesh Solanki (Roll No: IC-2K23-45)  
+**Language:** Python 3.10+
 
-## Basic requirements
-Implement Singly, Doubly, and Circular Linked Lists with insert at position, delete, reverse, and concatenate. Implement polynomial representation and addition using linked lists.
+---
 
-## Application / analysis requirements
-Text Editor Buffer: line-by-line editing using a doubly linked list. Playlist Manager: circular linked list with song navigation.
+## 1. Unit Overview
+Unit 3 implements fundamental dynamic linear data structures using pointer-linked node representations:
+- **Program 01:** Singly Linked List (insert at position, delete, reverse, concatenate)
+- **Program 02:** Doubly Linked List (bidirectional linking, head/tail operations, reverse)
+- **Program 03:** Circular Linked List (cyclic link, insert, delete, reverse)
+- **Program 04:** Polynomial Operations (descending linked representation, two-pointer addition)
+- **Application 01:** Text Editor Buffer (line-by-line editing using doubly linked list)
+- **Application 02:** Playlist Manager (cyclic continuous playback using circular linked list)
 
-## Program folders
-- [Singly Linked List](./Program01-Singly-Linked-List/README.md)
-- [Doubly Linked List](./Program02-Doubly-Linked-List/README.md)
-- [Circular Linked List](./Program03-Circular-Linked-List/README.md)
-- [Polynomial Representation and Addition](./Program04-Polynomial-Operations/README.md)
-- [Text Editor Buffer](./Application-Text-Editor-Buffer/README.md)
-- [Playlist Manager](./Application-Playlist-Manager/README.md)
+---
 
-## Documentation checklist
-For every program, complete its README with the problem statement, approach, algorithm, pseudocode, dry run, best/average/worst time and space complexity, sample I/O, screenshots, real-life application, learning outcomes, error handling, and unit tests where possible.
+## 2. Directory Structure
+```text
+Lab03-Linked-Lists/
+├── Program01-Singly-Linked-List/
+│   ├── singly_linked_list.py
+│   └── README.md
+├── Program02-Doubly-Linked-List/
+│   ├── doubly_linked_list.py
+│   └── README.md
+├── Program03-Circular-Linked-List/
+│   ├── circular_linked_list.py
+│   └── README.md
+├── Program04-Polynomial-Operations/
+│   ├── polynomial_operations.py
+│   └── README.md
+├── Application-Text-Editor-Buffer/
+│   ├── text_editor_buffer.py
+│   └── README.md
+├── Application-Playlist-Manager/
+│   ├── playlist_manager.py
+│   └── README.md
+├── reflection.md
+└── README.md
+```
 
-## Completion status
-- [ ] Implementation completed
-- [ ] Program tested
-- [ ] Complexity verified
-- [ ] Sample I/O captured
-- [ ] Screenshots added
-- [ ] Documentation reviewed
+---
 
-See [reflection.md](./reflection.md) for the cluster reflection.
+## 3. Execution Instructions
+Run from the repository root:
+```bash
+python Lab03-Linked-Lists/Program01-Singly-Linked-List/singly_linked_list.py
+python Lab03-Linked-Lists/Program02-Doubly-Linked-List/doubly_linked_list.py
+python Lab03-Linked-Lists/Program03-Circular-Linked-List/circular_linked_list.py
+python Lab03-Linked-Lists/Program04-Polynomial-Operations/polynomial_operations.py
+python Lab03-Linked-Lists/Application-Text-Editor-Buffer/text_editor_buffer.py
+python Lab03-Linked-Lists/Application-Playlist-Manager/playlist_manager.py
+```
+
+Run test suite:
+```bash
+python -m unittest tests/test_unit3.py
+```

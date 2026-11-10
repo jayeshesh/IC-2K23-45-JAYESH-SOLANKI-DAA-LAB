@@ -1,63 +1,47 @@
-# Playlist Manager
+# Playlist Manager (Circular Linked List)
 
-**Unit:** Unit 3: Linked Lists (CO1)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab03-Linked-Lists/Application-Playlist-Manager/playlist_manager.py`
 
 ## 1. Problem statement
-Build a playlist manager using a circular linked list with song navigation.
+Implement an audio media playlist manager capable of adding tracks, displaying playlist contents, and providing seamless continuous cyclic song navigation (`next_track()`) where advancing past the final track automatically loops back to the start.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+A Circular Singly Linked List (`SongNode`) models songs as nodes. Each node retains title, artist, duration, and a pointer to the next track. The final node points to the initial head node. The `current_song` cursor traverses the loop in $O(1)$ time per transition without boundary-check branch penalties.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
-
-## 4. Pseudocode
+## 3. Algorithm and Pseudocode
 ```text
-START
-  // Add language-independent pseudocode.
-END
+NEXT_TRACK(playlist):
+  if playlist.current == null: return null
+  playlist.current = playlist.current.next
+  return playlist.current.info
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
+## 4. Complexity analysis
+| Operation | Best | Average | Worst | Auxiliary space |
+|---|---:|---:|---:|---:|
+| Add song | O(1) | O(n) | O(n) | O(1) |
+| Next track transition | O(1) | O(1) | O(1) | O(1) |
+| List all tracks | O(n) | O(n) | O(n) | O(n) |
 
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
+## 5. Sample I/O
 ```text
-Sample input:
-_To be added after testing._
+Playlist Tracks:
+  1. Imagine - John Lennon (183s)
+  2. Bohemian Rhapsody - Queen (354s)
+  3. Hotel California - Eagles (391s)
 
-Sample output:
-_To be added after testing._
+Playback Simulation:
+  Now Playing: 'Imagine' by John Lennon
+  Now Playing: 'Bohemian Rhapsody' by Queen
+  Now Playing: 'Hotel California' by Eagles
+  [Looping back to start]
+  Now Playing: 'Imagine' by John Lennon
 ```
 
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
+## 6. Real-life application
+Music and video streaming services (Spotify, YouTube Music "Repeat All" queue), multimedia carousel presentation displays, and digital advertisement rotation.
 
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 7. Learning outcomes
+- Implemented loop-based continuous iteration through circular linked lists.
+- Built clean domain models separating business logic from raw pointer structures.
