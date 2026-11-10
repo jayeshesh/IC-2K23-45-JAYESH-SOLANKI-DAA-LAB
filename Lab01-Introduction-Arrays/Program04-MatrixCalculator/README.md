@@ -1,63 +1,53 @@
 # Matrix Calculator
 
-**Unit:** Unit 1: Introduction to Data Structures & Arrays (CO1)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab01-Introduction-Arrays/Program04-MatrixCalculator/matrix_calculator.py`
 
-## 1. Problem statement
+## Problem statement
 Build a menu-driven calculator for matrix addition, multiplication, transpose, and determinant for small matrices.
 
-## 2. Approach
-_To be completed after selecting and implementing the approach._
+## Approach
+Represent matrices as rectangular lists of numeric rows. Validate dimensions before addition and multiplication. Compute determinant recursively by cofactor expansion, with direct base cases for 1×1 and 2×2 matrices. This determinant implementation is intended for small matrices, as requested in the guide.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
-
-## 4. Pseudocode
+## Algorithm and pseudocode
 ```text
-START
-  // Add language-independent pseudocode.
-END
+DETERMINANT(M)
+  if M is 1x1: return its only value
+  if M is 2x2: return ad - bc
+  result = 0
+  for each column j in first row:
+    minor = matrix excluding first row and column j
+    result += (-1)^j * M[0][j] * DETERMINANT(minor)
+  return result
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
+## Dry run
+For `[[1,2],[3,4]]`, determinant = (1×4) − (2×3) = −2.
 
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
+## Complexity
+For r×c matrices:
+| Operation | Time | Auxiliary space |
+|---|---:|---:|
+| Addition | O(rc) | O(rc) for result |
+| Multiplication (r×k by k×c) | O(rkc) | O(rc) for result |
+| Transpose | O(rc) | O(rc) for result |
+| Determinant (n×n, cofactor expansion) | O(n!) | O(n³) worst-case temporary minor storage across recursive calls |
 
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
+## Sample I/O
 ```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
+Number of rows: 2
+Number of columns: 2
+Enter 2 values for row 1: 1 2
+Enter 2 values for row 2: 3 4
+Determinant result:
+-2.0
 ```
 
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
+## Real-life application
+Small-scale scientific, graphics, and engineering calculations.
 
-## 9. Real-life application
-_To be documented._
+## Learning outcomes
+_To be completed after execution and reflection._
 
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## Tests and screenshots
+See `tests/test_unit1.py`. Run the menu program and capture an actual terminal screenshot.

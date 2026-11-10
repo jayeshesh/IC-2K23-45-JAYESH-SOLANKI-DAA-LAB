@@ -1,63 +1,49 @@
 # 2D Array Operations
 
-**Unit:** Unit 1: Introduction to Data Structures & Arrays (CO1)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab01-Introduction-Arrays/Program02-2DArrayOperations/array_2d_operations.py`
 
-## 1. Problem statement
-Implement 2D array operations: insert, delete, search, and rotate.
+## Problem statement
+Implement insertion, deletion, searching, and rotation on two-dimensional arrays.
 
-## 2. Approach
-_To be completed after selecting and implementing the approach._
+## Approach
+Represent a matrix as a list of row lists. Validate rectangular shape before column-wise operations. Row and column insertion/deletion use zero-based indices; search returns all matching (row, column) coordinates. Rotation is 90 degrees clockwise and supports rectangular matrices.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
-
-## 4. Pseudocode
+## Algorithm and pseudocode
 ```text
-START
-  // Add language-independent pseudocode.
-END
+ROTATE_CLOCKWISE(M)
+  validate that all rows have equal length
+  return transpose(reverse_row_order(M))
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
+For row insertion, copy the matrix and insert a copy of the new row at the requested index. For column insertion/deletion, process each row at the same column index.
 
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
+## Dry run
+Input: `[[1,2,3],[4,5,6]]`. Reverse row order gives `[[4,5,6],[1,2,3]]`; transpose gives `[[4,1],[5,2],[6,3]]`.
 
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
+## Complexity
+For an r × c matrix:
+| Operation | Best | Average | Worst | Auxiliary space |
+|---|---:|---:|---:|---:|
+| Insert/delete row | O(rc) | O(rc) | O(rc) | O(rc) |
+| Insert/delete column | O(rc) | O(rc) | O(rc) | O(rc) |
+| Search | O(1) | O(rc) | O(rc) | O(k), for k matches |
+| Rotate | O(rc) | O(rc) | O(rc) | O(rc) |
 
-## 7. Sample input/output
+## Sample I/O
 ```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
+Initial matrix: [[1, 2, 3], [4, 5, 6]]
+Insert row at index 1: [[1, 2, 3], [7, 8, 9], [4, 5, 6]]
+Delete column 1: [[1, 3], [4, 6]]
+Search for 6: [(1, 2)]
+Rotate clockwise: [[4, 1], [5, 2], [6, 3]]
 ```
 
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
+## Real-life application
+Spreadsheet-like data, image grids, and board representations.
 
-## 9. Real-life application
-_To be documented._
+## Learning outcomes
+_To be completed after execution and reflection._
 
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## Tests and screenshots
+See `tests/test_unit1.py`. Capture a genuine terminal screenshot after running the program.
