@@ -11,7 +11,7 @@ Compare Bubble, Selection, Insertion, Merge, Quick, Heap, and Radix Sort empiric
 - Three repetitions per algorithm/input pair; report the median time.
 - Fixed random seed (42) for repeatable datasets.
 - Validate each output against Python's built-in `sorted` before recording the observation.
-- Use `time.perf_counter()`. Timings depend on CPU, Python version, background load, and platform.
+- Use `time.perf_counter()`; timings depend on CPU, Python version, background load, and platform.
 
 ## Algorithm and pseudocode
 ```text
@@ -31,10 +31,10 @@ There are A algorithms, D data types, S sizes, and R repeats. The benchmark runs
 
 ## Outputs
 The script generates:
-- `outputs/sorting_benchmark.csv`: measurements, input type, size, algorithm, median seconds, and repeat count.
+- `outputs/sorting_benchmark.csv`: measured rows.
 - `outputs/sorting_benchmark.png`: three-panel Matplotlib comparison chart.
 
-No timing values are pre-filled. Run the benchmark on the machine used for the lab and report those actual results.
+A measured run is preserved in [benchmark-results.md](./benchmark-results.md) and [outputs/sorting_benchmark.csv](./outputs/sorting_benchmark.csv). The chart from the same CI run is available in the [GitHub Actions artifact](https://github.com/jayeshesh/IC-2K23-45-JAYESH-SOLANKI-DAA-LAB/actions/runs/42788884457).
 
-## Analysis and reflection
-Compare quadratic sorts with n log n sorts as n grows, note the effect of already sorted input, and compare Radix Sort's behaviour for integer data. Record actual observations and add a genuine screenshot of the generated chart.
+## Analysis
+See [benchmark-results.md](./benchmark-results.md) for the measured comparison and observations. Timings are hardware-specific; use the theoretical complexity sections in the algorithm READMEs as well.
