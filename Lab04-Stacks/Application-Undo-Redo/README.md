@@ -1,63 +1,29 @@
-# Undo/Redo Application
+# Undo/Redo Feature using Command Pattern and Stacks
 
-**Unit:** Unit 4: Stacks (CO1)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab04-Stacks/Application-Undo-Redo/undo_redo.py`
 
 ## 1. Problem statement
-Implement Undo/Redo for a simple drawing or text application using command pattern and stack.
+Implement a robust undo/redo system for document editing or graphics applications using the Gang of Four (GoF) Command Design Pattern and dual stack architectures (`undo_stack` and `redo_stack`).
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+Each reversible operation encapsulates execution and rollback routines in an object inheriting from `Command`. New actions are pushed onto `undo_stack` while clearing `redo_stack`. Invoking undo pops the latest command, executes its `undo()` handler, and transfers it to `redo_stack`. Redo reverses this process.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Operation | Time | Auxiliary Space |
+|---|---:|---:|
+| Execute Command | O(1) | O(1) |
+| Undo | O(1) | O(1) |
+| Redo | O(1) | O(1) |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+Initial document: ''
+After two inserts: 'Hello World!'
+After 1st undo: 'Hello '
+After redo: 'Hello World!'
+After 2 undos: ''
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+Standard desktop applications (MS Word, VS Code `Ctrl+Z` / `Ctrl+Y`, Photoshop history brush, CAD design software).

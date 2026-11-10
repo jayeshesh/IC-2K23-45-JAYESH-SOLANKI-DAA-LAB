@@ -1,31 +1,62 @@
-# Unit 4: Stacks
+# Lab 04 – Stacks
 
 **Course:** IC-307D | Data Structures and Algorithms Lab  
-**Course Outcome:** CO1
+**Unit:** Unit 4: Stacks (CO1)  
+**Student:** Jayesh Solanki (Roll No: IC-2K23-45)  
+**Language:** Python 3.10+
 
-## Basic requirements
-Static and Dynamic (linked) Stack implementation; Infix to Postfix/Prefix conversion; Expression Evaluation.
+---
 
-## Application / analysis requirements
-Expression Evaluator with parentheses handling and operator precedence. Undo/Redo for a simple drawing or text application using the command pattern with stack.
+## 1. Unit Overview
+Unit 4 implements LIFO abstract data types and fundamental stack parsing and execution engines:
+- **Program 01:** Static Stack (fixed array capacity, overflow/underflow handling)
+- **Program 02:** Dynamic Stack (unbounded linked list implementation)
+- **Program 03:** Infix to Postfix/Prefix (Shunting-Yard conversion algorithm)
+- **Program 04:** Postfix and Prefix Evaluation (multi-digit evaluation engine)
+- **Application 01:** Full Expression Evaluator (operator precedence, associativity, parentheses)
+- **Application 02:** Undo/Redo Engine (GoF Command Pattern with dual history stacks)
 
-## Program folders
-- [Static Stack](./Program01-Static-Stack/README.md)
-- [Dynamic Stack](./Program02-Dynamic-Stack/README.md)
-- [Infix to Postfix/Prefix Conversion](./Program03-Infix-Conversion/README.md)
-- [Expression Evaluation](./Program04-Expression-Evaluation/README.md)
-- [Expression Evaluator Application](./Application-Expression-Evaluator/README.md)
-- [Undo/Redo Application](./Application-Undo-Redo/README.md)
+---
 
-## Documentation checklist
-For every program, complete its README with the problem statement, approach, algorithm, pseudocode, dry run, best/average/worst time and space complexity, sample I/O, screenshots, real-life application, learning outcomes, error handling, and unit tests where possible.
+## 2. Directory Structure
+```text
+Lab04-Stacks/
+├── Program01-Static-Stack/
+│   ├── static_stack.py
+│   └── README.md
+├── Program02-Dynamic-Stack/
+│   ├── dynamic_stack.py
+│   └── README.md
+├── Program03-Infix-Conversion/
+│   ├── infix_conversion.py
+│   └── README.md
+├── Program04-Expression-Evaluation/
+│   ├── expression_evaluation.py
+│   └── README.md
+├── Application-Expression-Evaluator/
+│   ├── expression_evaluator.py
+│   └── README.md
+├── Application-Undo-Redo/
+│   ├── undo_redo.py
+│   └── README.md
+├── reflection.md
+└── README.md
+```
 
-## Completion status
-- [ ] Implementation completed
-- [ ] Program tested
-- [ ] Complexity verified
-- [ ] Sample I/O captured
-- [ ] Screenshots added
-- [ ] Documentation reviewed
+---
 
-See [reflection.md](./reflection.md) for the cluster reflection.
+## 3. Execution Instructions
+Run from repository root:
+```bash
+python Lab04-Stacks/Program01-Static-Stack/static_stack.py
+python Lab04-Stacks/Program02-Dynamic-Stack/dynamic_stack.py
+python Lab04-Stacks/Program03-Infix-Conversion/infix_conversion.py
+python Lab04-Stacks/Program04-Expression-Evaluation/expression_evaluation.py
+python Lab04-Stacks/Application-Expression-Evaluator/expression_evaluator.py
+python Lab04-Stacks/Application-Undo-Redo/undo_redo.py
+```
+
+Run test suite:
+```bash
+python -m unittest tests/test_unit4.py
+```

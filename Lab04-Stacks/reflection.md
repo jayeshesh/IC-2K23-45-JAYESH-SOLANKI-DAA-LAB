@@ -1,18 +1,17 @@
-# Unit 4: Stacks | Reflection
+# Unit 4 Reflection – Stacks
 
-Complete this after implementing and testing the programs in this unit.
+**Student:** Jayesh Solanki (Roll No: IC-2K23-45)  
+**Course:** IC-307D | Data Structures and Algorithms Lab
 
-## What I learned
-_To be completed._
+## 1. What was learned
+- Designing static versus dynamic memory layouts for LIFO abstractions.
+- Applying Dijkstra's Shunting-Yard algorithm to enforce operator precedence, associativity rules, and parentheses scoping.
+- Structuring reversible software actions via the GoF Command Pattern using dual stacks.
 
-## Difficulties faced
-_Describe the challenge and how it was resolved._
+## 2. Difficulties encountered
+- Managing right-associative exponentiation (`^`) correctly in both infix-to-postfix and infix-to-prefix conversions.
+- Distinguishing prefix vs postfix operand evaluation ordering when popping $a$ and $b$ from operand stacks.
 
-## Optimizations made
-_Explain what changed and why._
-
-## Testing and observations
-_Record real tests, results, and limitations._
-
-## Further improvements
-_To be completed._
+## 3. Optimizations applied
+- Handled all operator lookups and precedence comparisons via $O(1)$ dictionary lookups.
+- Pre-allocated array memory in static stack to avoid dynamic array resizing amortized costs.

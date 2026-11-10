@@ -1,63 +1,28 @@
-# Expression Evaluation
+# Expression Evaluation (Postfix and Prefix)
 
-**Unit:** Unit 4: Stacks (CO1)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab04-Stacks/Program04-Expression-Evaluation/expression_evaluation.py`
 
 ## 1. Problem statement
-Evaluate expressions using a stack.
+Evaluate postfix and prefix mathematical expressions containing multi-digit numbers, arithmetic operators (`+`, `-`, `*`, `/`, `^`), and division-by-zero checks using an operand stack.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+- **Postfix Evaluation:** Scan tokens left-to-right. Push operands onto the stack. When an operator is encountered, pop two operands, compute $a \text{ op } b$, and push the result.
+- **Prefix Evaluation:** Scan tokens right-to-left. When an operator is encountered, pop the first two operands $a$ and $b$, compute $a \text{ op } b$, and push back.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Metric | Postfix Evaluation | Prefix Evaluation |
+|---|---:|---:|
+| Time Complexity | O(n) | O(n) |
+| Auxiliary Space | O(n) | O(n) |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+Postfix Tokens: ['10', '2', '3', '+', '*', '5', '-']
+Evaluated Postfix: 45.0
+Prefix Tokens: ['-', '*', '10', '+', '2', '3', '5']
+Evaluated Prefix: 45.0
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+Scientific calculators (e.g. Hewlett-Packard RPN calculators), Forth programming language interpreters, and PostScript printers.

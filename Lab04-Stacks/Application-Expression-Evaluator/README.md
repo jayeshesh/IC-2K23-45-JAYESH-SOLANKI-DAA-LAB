@@ -1,63 +1,26 @@
-# Expression Evaluator Application
+# Infix Expression Evaluator with Operator Precedence and Parentheses
 
-**Unit:** Unit 4: Stacks (CO1)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab04-Stacks/Application-Expression-Evaluator/expression_evaluator.py`
 
 ## 1. Problem statement
-Build an evaluator with parentheses handling and operator precedence.
+Build a complete arithmetic expression evaluator supporting multi-digit numbers, floating point operands, standard operators (`+`, `-`, `*`, `/`, `^`), arbitrary nested parentheses, and operator precedence and right-associativity.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+Two stacks (`values` and `operators`) evaluate the expression in a single pass. When closing parenthesis `)` or lower-precedence operator is encountered, pending sub-expressions are popped and evaluated immediately.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Metric | Value |
+|---|---:|
+| Time Complexity | O(n) |
+| Auxiliary Space | O(n) |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+3 + 5 * (2 - 8) = -27.0
+2 ^ 3 ^ 2 = 512.0
+((10 + 20) * 3) / (2 + 4) = 15.0
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+Spreadsheet formula calculation engines (e.g. Microsoft Excel, Google Sheets) and programming language expression parsers.

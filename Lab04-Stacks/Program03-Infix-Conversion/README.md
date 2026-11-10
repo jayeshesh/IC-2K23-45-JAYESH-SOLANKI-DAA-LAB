@@ -1,63 +1,26 @@
-# Infix to Postfix/Prefix Conversion
+# Infix to Postfix and Prefix Conversion
 
-**Unit:** Unit 4: Stacks (CO1)  
-**Status:** Not started  
-**Implementation language:** To be confirmed
+**Language:** Python 3.10+  
+**Run:** `python Lab04-Stacks/Program03-Infix-Conversion/infix_conversion.py`
 
 ## 1. Problem statement
-Convert infix expressions to postfix and prefix using a stack.
+Convert standard human-readable infix arithmetic expressions containing operators (`+`, `-`, `*`, `/`, `^`) and parentheses into parenthesisfree Postfix (Reverse Polish) and Prefix (Polish) notations using Dijkstra's Shunting-Yard stack algorithm.
 
 ## 2. Approach
-_To be completed after selecting and implementing the approach._
+An operator stack temporarily holds operators based on precedence hierarchy and associativity rules (`^` is right-associative; others left-associative). Prefix conversion is performed by reversing the infix expression, swapping parentheses, running the modified shunting-yard algorithm, and reversing the resulting output.
 
-## 3. Algorithm
-_Document the actual algorithm step by step._
+## 3. Complexity analysis
+| Metric | Infix to Postfix | Infix to Prefix |
+|---|---:|---:|
+| Time Complexity | O(n) | O(n) |
+| Auxiliary Space | O(n) | O(n) |
 
-## 4. Pseudocode
+## 4. Sample I/O
 ```text
-START
-  // Add language-independent pseudocode.
-END
+Infix:   A+B*(C^D-E)^(F+G*H)-I
+Postfix: ABCD^E-FGH*+^*+I-
+Prefix:  -+A*B^-^CDE+F*GHI
 ```
 
-## 5. Dry run
-| Step | Input / state | Operation | Output / state |
-|---|---|---|---|
-| 1 | _Example input_ | _Operation_ | _Result_ |
-
-## 6. Complexity analysis
-Record time and auxiliary-space complexity for the actual implementation.
-
-| Case | Time | Auxiliary space |
-|---|---|---|
-| Best | To be analyzed | To be analyzed |
-| Average | To be analyzed | To be analyzed |
-| Worst | To be analyzed | To be analyzed |
-
-## 7. Sample input/output
-```text
-Sample input:
-_To be added after testing._
-
-Sample output:
-_To be added after testing._
-```
-
-## 8. Screenshots
-_Add genuine screenshots of a tested program run._
-
-## 9. Real-life application
-_To be documented._
-
-## 10. Learning outcomes
-_To be completed after implementation._
-
-## 11. Tests and error handling
-- [ ] Normal input
-- [ ] Boundary cases
-- [ ] Invalid input / error handling
-- [ ] Empty or minimal input where applicable
-- [ ] Unit tests where possible
-
-## 12. References
-_Add references used, if any._
+## 5. Real-life application
+Compiler parsing front-ends, AST generation, and stack-based bytecode virtual machines (e.g. JVM, Python disassembler).
