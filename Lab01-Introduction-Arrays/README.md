@@ -24,11 +24,3 @@ From the repository root:
 python -m unittest discover -s tests -v
 ```
 
-## Completion status
-- [x] Implementations added
-- [x] Unit tests added
-- [ ] Run tests and record final results
-- [ ] Capture genuine execution screenshots
-- [ ] Complete the unit reflection
-
-See [reflection.md](./reflection.md) for the learning reflection.
